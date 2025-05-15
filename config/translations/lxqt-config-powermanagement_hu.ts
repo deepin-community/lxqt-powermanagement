@@ -35,22 +35,22 @@
     </message>
     <message>
         <location filename="../batterywatchersettings.ui" line="111"/>
-        <source>Use icons from theme:</source>
-        <translation>Ikonok a témából:</translation>
+        <source>Icon:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../batterywatchersettings.ui" line="125"/>
-        <location filename="../batterywatchersettings.cpp" line="93"/>
+        <location filename="../batterywatchersettings.ui" line="121"/>
+        <location filename="../batterywatchersettings.cpp" line="104"/>
         <source>Preview</source>
         <translation>Előnézet</translation>
     </message>
     <message>
-        <location filename="../batterywatchersettings.ui" line="162"/>
+        <location filename="../batterywatchersettings.ui" line="158"/>
         <source>Charging</source>
         <translation>Töltés</translation>
     </message>
     <message>
-        <location filename="../batterywatchersettings.ui" line="200"/>
+        <location filename="../batterywatchersettings.ui" line="196"/>
         <source>Discharging</source>
         <translation>Kisütés</translation>
     </message>
@@ -65,12 +65,42 @@
         <translation>Ikon megjelenítése:</translation>
     </message>
     <message>
-        <location filename="../batterywatchersettings.cpp" line="93"/>
+        <location filename="../batterywatchersettings.cpp" line="41"/>
+        <source>from theme</source>
+        <comment>icons</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../batterywatchersettings.cpp" line="42"/>
+        <source>Circle</source>
+        <comment>icons</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../batterywatchersettings.cpp" line="43"/>
+        <source>Circle with percentage</source>
+        <comment>icons</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../batterywatchersettings.cpp" line="44"/>
+        <source>Battery with percentage and background</source>
+        <comment>icons</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../batterywatchersettings.cpp" line="45"/>
+        <source>Battery with percentage</source>
+        <comment>icons</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../batterywatchersettings.cpp" line="104"/>
         <source>built in</source>
         <translation>beépített</translation>
     </message>
     <message>
-        <location filename="../batterywatchersettings.cpp" line="98"/>
+        <location filename="../batterywatchersettings.cpp" line="109"/>
         <source>Level: %1%</source>
         <translation>Szint: %1%</translation>
     </message>
@@ -80,58 +110,75 @@
     <message>
         <location filename="../idlenesswatchersettings.ui" line="17"/>
         <source>Enab&amp;le Idleness Watcher</source>
-        <translation>Tétle&amp;nségi felügyelet</translation>
+        <translation>Tétle&amp;nségi felügyelet engedélyezése</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="34"/>
-        <source>When idle then:</source>
-        <translation>Tétlenség esetén:</translation>
-    </message>
-    <message>
-        <location filename="../idlenesswatchersettings.ui" line="53"/>
-        <location filename="../idlenesswatchersettings.ui" line="123"/>
+        <location filename="../idlenesswatchersettings.ui" line="151"/>
         <source>Idle time:</source>
         <translation>Tétlenségi idő:</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="66"/>
-        <source> minutes</source>
-        <translation> perc</translation>
-    </message>
-    <message>
-        <location filename="../idlenesswatchersettings.ui" line="79"/>
-        <source> seconds</source>
-        <translation> másodperc</translation>
-    </message>
-    <message>
-        <location filename="../idlenesswatchersettings.ui" line="94"/>
+        <location filename="../idlenesswatchersettings.ui" line="122"/>
         <source>Enable Backlight Change</source>
         <translation>Háttérvilágítás-változtatás engedélyezése</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="103"/>
+        <location filename="../idlenesswatchersettings.ui" line="83"/>
+        <source>When idle on Battery:</source>
+        <translation type="unfinished">Amikor nincs töltőn és tétlen:</translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="90"/>
+        <source>Battery Idle time:</source>
+        <translation>Akkumulátor tétlenségi idő:</translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="131"/>
         <source>Backlight (%):</source>
         <translation>Háttérvilágítás (%):</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="130"/>
+        <location filename="../idlenesswatchersettings.ui" line="158"/>
         <source>Minutes:Seconds</source>
         <translation>Perc:másodperc</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="150"/>
+        <location filename="../idlenesswatchersettings.ui" line="76"/>
+        <location filename="../idlenesswatchersettings.ui" line="110"/>
+        <location filename="../idlenesswatchersettings.ui" line="178"/>
         <source>mm:ss</source>
-        <translation>pp:mpmp</translation>
+        <translation>mm:ss</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="157"/>
+        <location filename="../idlenesswatchersettings.ui" line="34"/>
+        <source>When idle on AC:</source>
+        <translation>Amikor külső tápon tétlen:</translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="53"/>
+        <source>AC Idle time:</source>
+        <translation>Külső táp tétlenségi idő:</translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="63"/>
+        <location filename="../idlenesswatchersettings.ui" line="97"/>
+        <source>Minutes:Seconds (min: 01:30)</source>
+        <translation>Perc:másodperc (minimum: 01:30)</translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="185"/>
         <source>Check backlight</source>
         <translation>Háttérvilágítás ellenőrzése</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="164"/>
+        <location filename="../idlenesswatchersettings.ui" line="192"/>
         <source>On battery discharging </source>
         <translation>Az akkumulátor lemerüléséről </translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="208"/>
+        <source>Disable idleness checks when fullscreen</source>
+        <translation>Tétlenségi ellenőrzés kikapcsolás teljes képernyős alkalmazás esetén</translation>
     </message>
 </context>
 <context>
@@ -139,18 +186,18 @@
     <message>
         <location filename="../lidwatchersettings.ui" line="23"/>
         <source>Enable &amp;Lid Watcher</source>
-        <translation>Fedé&amp;lfelügyelet</translation>
+        <translation>Fedé&amp;lfelügyelet engedélyezése</translation>
     </message>
     <message>
         <location filename="../lidwatchersettings.ui" line="38"/>
-        <source>Action when lid is closed</source>
-        <translation>Teendő lecsukáskor</translation>
+        <source>Action when lid is closed:</source>
+        <translation>Teendő lecsukáskor:</translation>
     </message>
     <message>
         <location filename="../lidwatchersettings.ui" line="50"/>
         <location filename="../lidwatchersettings.ui" line="115"/>
-        <source>On Battery</source>
-        <translation>Akkumulátor</translation>
+        <source>On Battery:</source>
+        <translation>Akkumulátor:</translation>
     </message>
     <message>
         <location filename="../lidwatchersettings.ui" line="58"/>
@@ -165,18 +212,18 @@
     <message>
         <location filename="../lidwatchersettings.ui" line="68"/>
         <source>Hibernate</source>
-        <translation>Mélykészenlét</translation>
+        <translation>Hibernálás</translation>
     </message>
     <message>
         <location filename="../lidwatchersettings.ui" line="73"/>
         <source>Shut down</source>
-        <translation>Kikapcsolás</translation>
+        <translation>Leállítás</translation>
     </message>
     <message>
         <location filename="../lidwatchersettings.ui" line="81"/>
         <location filename="../lidwatchersettings.ui" line="125"/>
-        <source>On AC</source>
-        <translation>Külső táp</translation>
+        <source>On AC:</source>
+        <translation>Külső táp:</translation>
     </message>
     <message>
         <location filename="../lidwatchersettings.ui" line="94"/>
@@ -189,7 +236,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="37"/>
         <source>Power Management Settings</source>
-        <translation>Energiakezelés</translation>
+        <translation>Energiakezelés beállítások</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="40"/>
@@ -204,7 +251,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="48"/>
         <source>Idle</source>
-        <translation>Tétlen</translation>
+        <translation>Tétlenség</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="52"/>
@@ -217,7 +264,7 @@
     <message>
         <location filename="../powerkeyssettings.ui" line="14"/>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation>Űrlap</translation>
     </message>
     <message>
         <location filename="../powerkeyssettings.ui" line="20"/>
@@ -226,18 +273,23 @@
     </message>
     <message>
         <location filename="../powerkeyssettings.ui" line="26"/>
-        <source>Power Key Action</source>
-        <translation>Bekapcsológomb művelet</translation>
+        <source>Power Key Action:</source>
+        <translation>Bekapcsológomb művelet:</translation>
     </message>
     <message>
         <location filename="../powerkeyssettings.ui" line="42"/>
-        <source>Suspend Key Action</source>
-        <translation>Felfüggesztés gomb művelet</translation>
+        <source>Suspend Key Action:</source>
+        <translation>Felfüggesztés gomb művelet:</translation>
     </message>
     <message>
         <location filename="../powerkeyssettings.ui" line="49"/>
-        <source>Hibernate Key Action</source>
-        <translation>Hibernálás gomb művelet</translation>
+        <source>Hibernate Key Action:</source>
+        <translation>Hibernálás gomb művelet:</translation>
+    </message>
+    <message>
+        <location filename="../powerkeyssettings.cpp" line="48"/>
+        <source>Note: Under Wayland, power keys are configured by the compositor instead.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -248,32 +300,32 @@
         <translation>Semmi</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="36"/>
+        <location filename="../helpers.cpp" line="38"/>
         <source>Ask</source>
         <translation>Kérdezze meg</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="37"/>
+        <location filename="../helpers.cpp" line="40"/>
         <source>Lock screen</source>
         <translation>Zárolás</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="38"/>
+        <location filename="../helpers.cpp" line="41"/>
         <source>Suspend</source>
         <translation>Készenlét</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="39"/>
+        <location filename="../helpers.cpp" line="42"/>
         <source>Hibernate</source>
-        <translation>Mélykészenlét</translation>
+        <translation>Hibernálás</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="40"/>
+        <location filename="../helpers.cpp" line="43"/>
         <source>Shutdown</source>
-        <translation>Kikapcsolás</translation>
+        <translation>Leállítás</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="41"/>
+        <location filename="../helpers.cpp" line="44"/>
         <source>Turn Off monitor(s)</source>
         <translation>Monitor(ok) kikapcsolása</translation>
     </message>

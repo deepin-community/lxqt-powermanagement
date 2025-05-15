@@ -39,18 +39,22 @@ public:
 
 private Q_SLOTS:
     void setup();
-    void timeoutReached(int identifier);
+    void timeoutReached(int identifier,int msec);
     void resumingFromIdle();
     void onBatteryChanged(int newState, const QString &udi = QString());
     void onSettingsChanged();
 
 private:
+    void setDpmsTimeouts(bool restore);
+
     PowerManagementSettings mPSettings;
-    int mIdleWatcher;
+    int mIdleACWatcher;
+    int mIdleBatteryWatcher;
     int mIdleBacklightWatcher;
     LXQt::Backlight *mBacklight;
     int mBacklightActualValue;
     bool mDischarging;
+    quint16 mDpmsStandby, mDpmsSuspend, mDpmsOff;
 };
 
 #endif // IDLENESSWATCHER_H

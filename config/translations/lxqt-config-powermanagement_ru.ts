@@ -35,22 +35,22 @@
     </message>
     <message>
         <location filename="../batterywatchersettings.ui" line="111"/>
-        <source>Use icons from theme:</source>
-        <translation>Использовать значки из темы:</translation>
+        <source>Icon:</source>
+        <translation>Значок:</translation>
     </message>
     <message>
-        <location filename="../batterywatchersettings.ui" line="125"/>
-        <location filename="../batterywatchersettings.cpp" line="93"/>
+        <location filename="../batterywatchersettings.ui" line="121"/>
+        <location filename="../batterywatchersettings.cpp" line="104"/>
         <source>Preview</source>
         <translation>Предварительный просмотр</translation>
     </message>
     <message>
-        <location filename="../batterywatchersettings.ui" line="162"/>
+        <location filename="../batterywatchersettings.ui" line="158"/>
         <source>Charging</source>
         <translation>Заряжается</translation>
     </message>
     <message>
-        <location filename="../batterywatchersettings.ui" line="200"/>
+        <location filename="../batterywatchersettings.ui" line="196"/>
         <source>Discharging</source>
         <translation>Разряжается</translation>
     </message>
@@ -65,12 +65,42 @@
         <translation>Показывать значок:</translation>
     </message>
     <message>
-        <location filename="../batterywatchersettings.cpp" line="93"/>
+        <location filename="../batterywatchersettings.cpp" line="41"/>
+        <source>from theme</source>
+        <comment>icons</comment>
+        <translation>из темы</translation>
+    </message>
+    <message>
+        <location filename="../batterywatchersettings.cpp" line="42"/>
+        <source>Circle</source>
+        <comment>icons</comment>
+        <translation>Окружность</translation>
+    </message>
+    <message>
+        <location filename="../batterywatchersettings.cpp" line="43"/>
+        <source>Circle with percentage</source>
+        <comment>icons</comment>
+        <translation>Окружность с процентами</translation>
+    </message>
+    <message>
+        <location filename="../batterywatchersettings.cpp" line="44"/>
+        <source>Battery with percentage and background</source>
+        <comment>icons</comment>
+        <translation>Батарея с процентами и фоном</translation>
+    </message>
+    <message>
+        <location filename="../batterywatchersettings.cpp" line="45"/>
+        <source>Battery with percentage</source>
+        <comment>icons</comment>
+        <translation>Батарея с процентами</translation>
+    </message>
+    <message>
+        <location filename="../batterywatchersettings.cpp" line="104"/>
         <source>built in</source>
         <translation>встроенная</translation>
     </message>
     <message>
-        <location filename="../batterywatchersettings.cpp" line="98"/>
+        <location filename="../batterywatchersettings.cpp" line="109"/>
         <source>Level: %1%</source>
         <translation>Уровень: %1%</translation>
     </message>
@@ -83,55 +113,72 @@
         <translation>В&amp;ключить наблюдение за простоем</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="34"/>
-        <source>When idle then:</source>
-        <translation>При простое:</translation>
-    </message>
-    <message>
-        <location filename="../idlenesswatchersettings.ui" line="53"/>
-        <location filename="../idlenesswatchersettings.ui" line="123"/>
+        <location filename="../idlenesswatchersettings.ui" line="151"/>
         <source>Idle time:</source>
         <translation>Время простоя:</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="66"/>
-        <source> minutes</source>
-        <translation> минут</translation>
-    </message>
-    <message>
-        <location filename="../idlenesswatchersettings.ui" line="79"/>
-        <source> seconds</source>
-        <translation> секунд</translation>
-    </message>
-    <message>
-        <location filename="../idlenesswatchersettings.ui" line="94"/>
+        <location filename="../idlenesswatchersettings.ui" line="122"/>
         <source>Enable Backlight Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Включить изменение подсветки</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="103"/>
+        <location filename="../idlenesswatchersettings.ui" line="83"/>
+        <source>When idle on Battery:</source>
+        <translation>В режиме ожидания от батареи:</translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="90"/>
+        <source>Battery Idle time:</source>
+        <translation>Время простоя аккумулятора:</translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="131"/>
         <source>Backlight (%):</source>
-        <translation type="unfinished"></translation>
+        <translation>Подсветка (%):</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="130"/>
+        <location filename="../idlenesswatchersettings.ui" line="158"/>
         <source>Minutes:Seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Минуты:Секунды</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="150"/>
+        <location filename="../idlenesswatchersettings.ui" line="76"/>
+        <location filename="../idlenesswatchersettings.ui" line="110"/>
+        <location filename="../idlenesswatchersettings.ui" line="178"/>
         <source>mm:ss</source>
-        <translation type="unfinished"></translation>
+        <translation>мм:сс</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="157"/>
+        <location filename="../idlenesswatchersettings.ui" line="34"/>
+        <source>When idle on AC:</source>
+        <translation>При простое от сети:</translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="53"/>
+        <source>AC Idle time:</source>
+        <translation>Время простоя от сети:</translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="63"/>
+        <location filename="../idlenesswatchersettings.ui" line="97"/>
+        <source>Minutes:Seconds (min: 01:30)</source>
+        <translation>Минуты:Секунды (мин: 01:30)</translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="185"/>
         <source>Check backlight</source>
-        <translation type="unfinished"></translation>
+        <translation>Проверить подсветку</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="164"/>
+        <location filename="../idlenesswatchersettings.ui" line="192"/>
         <source>On battery discharging </source>
-        <translation type="unfinished"></translation>
+        <translation>Только при работе от батареи </translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="208"/>
+        <source>Disable idleness checks when fullscreen</source>
+        <translation>Отключить проверку бездействия в полноэкранном режиме</translation>
     </message>
 </context>
 <context>
@@ -143,14 +190,14 @@
     </message>
     <message>
         <location filename="../lidwatchersettings.ui" line="38"/>
-        <source>Action when lid is closed</source>
-        <translation>Действие при закрытии крышки</translation>
+        <source>Action when lid is closed:</source>
+        <translation>Действие при закрытии крышки:</translation>
     </message>
     <message>
         <location filename="../lidwatchersettings.ui" line="50"/>
         <location filename="../lidwatchersettings.ui" line="115"/>
-        <source>On Battery</source>
-        <translation>От батареи</translation>
+        <source>On Battery:</source>
+        <translation>От батареи:</translation>
     </message>
     <message>
         <location filename="../lidwatchersettings.ui" line="58"/>
@@ -175,8 +222,8 @@
     <message>
         <location filename="../lidwatchersettings.ui" line="81"/>
         <location filename="../lidwatchersettings.ui" line="125"/>
-        <source>On AC</source>
-        <translation>От сети</translation>
+        <source>On AC:</source>
+        <translation>От сети:</translation>
     </message>
     <message>
         <location filename="../lidwatchersettings.ui" line="94"/>
@@ -209,7 +256,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="52"/>
         <source>Power keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Кнопки питания</translation>
     </message>
 </context>
 <context>
@@ -217,27 +264,32 @@
     <message>
         <location filename="../powerkeyssettings.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <location filename="../powerkeyssettings.ui" line="20"/>
         <source>Handle Power Keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Действия при нажатии на клавиши управления питанием</translation>
     </message>
     <message>
         <location filename="../powerkeyssettings.ui" line="26"/>
-        <source>Power Key Action</source>
-        <translation type="unfinished"></translation>
+        <source>Power Key Action:</source>
+        <translation>Кнопка выключения:</translation>
     </message>
     <message>
         <location filename="../powerkeyssettings.ui" line="42"/>
-        <source>Suspend Key Action</source>
-        <translation type="unfinished"></translation>
+        <source>Suspend Key Action:</source>
+        <translation>Переход в ждущий режим:</translation>
     </message>
     <message>
         <location filename="../powerkeyssettings.ui" line="49"/>
-        <source>Hibernate Key Action</source>
-        <translation type="unfinished"></translation>
+        <source>Hibernate Key Action:</source>
+        <translation>Переход в спящий режим:</translation>
+    </message>
+    <message>
+        <location filename="../powerkeyssettings.cpp" line="48"/>
+        <source>Note: Under Wayland, power keys are configured by the compositor instead.</source>
+        <translation>Замечание: под Wayland клавиши управления питанием настраиваются в настройках самого композитора.</translation>
     </message>
 </context>
 <context>
@@ -248,34 +300,34 @@
         <translation>Ничего</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="36"/>
+        <location filename="../helpers.cpp" line="38"/>
         <source>Ask</source>
-        <translation type="unfinished"></translation>
+        <translation>Спросить</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="37"/>
+        <location filename="../helpers.cpp" line="40"/>
         <source>Lock screen</source>
         <translation>Блокировать экран</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="38"/>
+        <location filename="../helpers.cpp" line="41"/>
         <source>Suspend</source>
         <translation>Ждущий режим</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="39"/>
+        <location filename="../helpers.cpp" line="42"/>
         <source>Hibernate</source>
         <translation>Спящий режим</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="40"/>
+        <location filename="../helpers.cpp" line="43"/>
         <source>Shutdown</source>
         <translation>Выключить компьютер</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="41"/>
+        <location filename="../helpers.cpp" line="44"/>
         <source>Turn Off monitor(s)</source>
-        <translation>Выключить монитор(ы)</translation>
+        <translation>Отключить монитор(ы)</translation>
     </message>
 </context>
 </TS>

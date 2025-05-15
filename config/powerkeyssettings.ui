@@ -23,7 +23,7 @@
       <item row="0" column="0">
        <widget class="QLabel" name="powerKeyLabel">
         <property name="text">
-         <string>Power Key Action</string>
+         <string>Power Key Action:</string>
         </property>
        </widget>
       </item>
@@ -39,14 +39,40 @@
       <item row="1" column="0">
        <widget class="QLabel" name="suspendKeyLabel">
         <property name="text">
-         <string>Suspend Key Action</string>
+         <string>Suspend Key Action:</string>
         </property>
        </widget>
       </item>
       <item row="2" column="0">
        <widget class="QLabel" name="hibernateKeyLabel">
         <property name="text">
-         <string>Hibernate Key Action</string>
+         <string>Hibernate Key Action:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="2">
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>10</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="4" column="0" colspan="2">
+       <widget class="QLabel" name="waylandLabel">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
         </property>
        </widget>
       </item>

@@ -35,22 +35,22 @@
     </message>
     <message>
         <location filename="../batterywatchersettings.ui" line="111"/>
-        <source>Use icons from theme:</source>
-        <translation>使用主题提供的图标:</translation>
+        <source>Icon:</source>
+        <translation>图标:</translation>
     </message>
     <message>
-        <location filename="../batterywatchersettings.ui" line="125"/>
-        <location filename="../batterywatchersettings.cpp" line="93"/>
+        <location filename="../batterywatchersettings.ui" line="121"/>
+        <location filename="../batterywatchersettings.cpp" line="104"/>
         <source>Preview</source>
         <translation>预览</translation>
     </message>
     <message>
-        <location filename="../batterywatchersettings.ui" line="162"/>
+        <location filename="../batterywatchersettings.ui" line="158"/>
         <source>Charging</source>
         <translation>正在充电</translation>
     </message>
     <message>
-        <location filename="../batterywatchersettings.ui" line="200"/>
+        <location filename="../batterywatchersettings.ui" line="196"/>
         <source>Discharging</source>
         <translation>正在放电</translation>
     </message>
@@ -65,12 +65,42 @@
         <translation>显示图标:</translation>
     </message>
     <message>
-        <location filename="../batterywatchersettings.cpp" line="93"/>
+        <location filename="../batterywatchersettings.cpp" line="41"/>
+        <source>from theme</source>
+        <comment>icons</comment>
+        <translation>来自主题</translation>
+    </message>
+    <message>
+        <location filename="../batterywatchersettings.cpp" line="42"/>
+        <source>Circle</source>
+        <comment>icons</comment>
+        <translation>圆环</translation>
+    </message>
+    <message>
+        <location filename="../batterywatchersettings.cpp" line="43"/>
+        <source>Circle with percentage</source>
+        <comment>icons</comment>
+        <translation>带百分比的圆环</translation>
+    </message>
+    <message>
+        <location filename="../batterywatchersettings.cpp" line="44"/>
+        <source>Battery with percentage and background</source>
+        <comment>icons</comment>
+        <translation>带百分比的电池和背景</translation>
+    </message>
+    <message>
+        <location filename="../batterywatchersettings.cpp" line="45"/>
+        <source>Battery with percentage</source>
+        <comment>icons</comment>
+        <translation>带百分比的电池</translation>
+    </message>
+    <message>
+        <location filename="../batterywatchersettings.cpp" line="104"/>
         <source>built in</source>
         <translation>内置</translation>
     </message>
     <message>
-        <location filename="../batterywatchersettings.cpp" line="98"/>
+        <location filename="../batterywatchersettings.cpp" line="109"/>
         <source>Level: %1%</source>
         <translation>百分比: %1%</translation>
     </message>
@@ -83,55 +113,72 @@
         <translation>开启空闲监视器(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="34"/>
-        <source>When idle then:</source>
-        <translation>空闲时:</translation>
-    </message>
-    <message>
-        <location filename="../idlenesswatchersettings.ui" line="53"/>
-        <location filename="../idlenesswatchersettings.ui" line="123"/>
+        <location filename="../idlenesswatchersettings.ui" line="151"/>
         <source>Idle time:</source>
         <translation>空闲临界时间:</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="66"/>
-        <source> minutes</source>
-        <translation> 分钟</translation>
-    </message>
-    <message>
-        <location filename="../idlenesswatchersettings.ui" line="79"/>
-        <source> seconds</source>
-        <translation> 秒</translation>
-    </message>
-    <message>
-        <location filename="../idlenesswatchersettings.ui" line="94"/>
+        <location filename="../idlenesswatchersettings.ui" line="122"/>
         <source>Enable Backlight Change</source>
-        <translation type="unfinished"></translation>
+        <translation>启用背光修改</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="103"/>
+        <location filename="../idlenesswatchersettings.ui" line="83"/>
+        <source>When idle on Battery:</source>
+        <translation>电池闲置时：</translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="90"/>
+        <source>Battery Idle time:</source>
+        <translation>电池闲置时间：</translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="131"/>
         <source>Backlight (%):</source>
-        <translation type="unfinished"></translation>
+        <translation>背光 (%):</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="130"/>
+        <location filename="../idlenesswatchersettings.ui" line="158"/>
         <source>Minutes:Seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>分钟：秒钟</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="150"/>
+        <location filename="../idlenesswatchersettings.ui" line="76"/>
+        <location filename="../idlenesswatchersettings.ui" line="110"/>
+        <location filename="../idlenesswatchersettings.ui" line="178"/>
         <source>mm:ss</source>
-        <translation type="unfinished"></translation>
+        <translation>mm:ss</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="157"/>
+        <location filename="../idlenesswatchersettings.ui" line="34"/>
+        <source>When idle on AC:</source>
+        <translation>在交流电闲置时：</translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="53"/>
+        <source>AC Idle time:</source>
+        <translation>交流闲置时间：</translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="63"/>
+        <location filename="../idlenesswatchersettings.ui" line="97"/>
+        <source>Minutes:Seconds (min: 01:30)</source>
+        <translation>分钟：秒（分钟：01：30）</translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="185"/>
         <source>Check backlight</source>
-        <translation type="unfinished"></translation>
+        <translation>检测背光</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="164"/>
+        <location filename="../idlenesswatchersettings.ui" line="192"/>
         <source>On battery discharging </source>
-        <translation type="unfinished"></translation>
+        <translation>电池放电 </translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="208"/>
+        <source>Disable idleness checks when fullscreen</source>
+        <translation>全屏时禁用空闲检查</translation>
     </message>
 </context>
 <context>
@@ -143,14 +190,14 @@
     </message>
     <message>
         <location filename="../lidwatchersettings.ui" line="38"/>
-        <source>Action when lid is closed</source>
-        <translation>合盖时的动作</translation>
+        <source>Action when lid is closed:</source>
+        <translation>合盖时的动作:</translation>
     </message>
     <message>
         <location filename="../lidwatchersettings.ui" line="50"/>
         <location filename="../lidwatchersettings.ui" line="115"/>
-        <source>On Battery</source>
-        <translation>电池供电时</translation>
+        <source>On Battery:</source>
+        <translation>电池供电时:</translation>
     </message>
     <message>
         <location filename="../lidwatchersettings.ui" line="58"/>
@@ -175,8 +222,8 @@
     <message>
         <location filename="../lidwatchersettings.ui" line="81"/>
         <location filename="../lidwatchersettings.ui" line="125"/>
-        <source>On AC</source>
-        <translation>交流供电时</translation>
+        <source>On AC:</source>
+        <translation>交流供电时:</translation>
     </message>
     <message>
         <location filename="../lidwatchersettings.ui" line="94"/>
@@ -209,7 +256,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="52"/>
         <source>Power keys</source>
-        <translation type="unfinished"></translation>
+        <translation>电源键</translation>
     </message>
 </context>
 <context>
@@ -217,27 +264,32 @@
     <message>
         <location filename="../powerkeyssettings.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>表单</translation>
     </message>
     <message>
         <location filename="../powerkeyssettings.ui" line="20"/>
         <source>Handle Power Keys</source>
-        <translation type="unfinished"></translation>
+        <translation>处理电源键</translation>
     </message>
     <message>
         <location filename="../powerkeyssettings.ui" line="26"/>
-        <source>Power Key Action</source>
-        <translation type="unfinished"></translation>
+        <source>Power Key Action:</source>
+        <translation>电源键的动作:</translation>
     </message>
     <message>
         <location filename="../powerkeyssettings.ui" line="42"/>
-        <source>Suspend Key Action</source>
-        <translation type="unfinished"></translation>
+        <source>Suspend Key Action:</source>
+        <translation>挂起键的动作:</translation>
     </message>
     <message>
         <location filename="../powerkeyssettings.ui" line="49"/>
-        <source>Hibernate Key Action</source>
-        <translation type="unfinished"></translation>
+        <source>Hibernate Key Action:</source>
+        <translation>Hibernate 的按键操作:</translation>
+    </message>
+    <message>
+        <location filename="../powerkeyssettings.cpp" line="48"/>
+        <source>Note: Under Wayland, power keys are configured by the compositor instead.</source>
+        <translation>注意：在 Wayland 下，电源键由合成器配置。</translation>
     </message>
 </context>
 <context>
@@ -248,32 +300,32 @@
         <translation>无动作</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="36"/>
+        <location filename="../helpers.cpp" line="38"/>
         <source>Ask</source>
-        <translation type="unfinished"></translation>
+        <translation>提问</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="37"/>
+        <location filename="../helpers.cpp" line="40"/>
         <source>Lock screen</source>
         <translation>锁屏</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="38"/>
+        <location filename="../helpers.cpp" line="41"/>
         <source>Suspend</source>
         <translation>挂起</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="39"/>
+        <location filename="../helpers.cpp" line="42"/>
         <source>Hibernate</source>
         <translation>休眠</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="40"/>
+        <location filename="../helpers.cpp" line="43"/>
         <source>Shutdown</source>
         <translation>关机</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="41"/>
+        <location filename="../helpers.cpp" line="44"/>
         <source>Turn Off monitor(s)</source>
         <translation>关闭显示器(s)</translation>
     </message>

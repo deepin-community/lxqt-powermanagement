@@ -35,22 +35,22 @@
     </message>
     <message>
         <location filename="../batterywatchersettings.ui" line="111"/>
-        <source>Use icons from theme:</source>
-        <translation>Gunakan ikon dari tema:</translation>
+        <source>Icon:</source>
+        <translation>Ikon:</translation>
     </message>
     <message>
-        <location filename="../batterywatchersettings.ui" line="125"/>
-        <location filename="../batterywatchersettings.cpp" line="93"/>
+        <location filename="../batterywatchersettings.ui" line="121"/>
+        <location filename="../batterywatchersettings.cpp" line="104"/>
         <source>Preview</source>
         <translation>Pratayang</translation>
     </message>
     <message>
-        <location filename="../batterywatchersettings.ui" line="162"/>
+        <location filename="../batterywatchersettings.ui" line="158"/>
         <source>Charging</source>
         <translation>Mengisi daya</translation>
     </message>
     <message>
-        <location filename="../batterywatchersettings.ui" line="200"/>
+        <location filename="../batterywatchersettings.ui" line="196"/>
         <source>Discharging</source>
         <translation>Pengosongan</translation>
     </message>
@@ -65,12 +65,42 @@
         <translation>Tampilkan ikon:</translation>
     </message>
     <message>
-        <location filename="../batterywatchersettings.cpp" line="93"/>
+        <location filename="../batterywatchersettings.cpp" line="41"/>
+        <source>from theme</source>
+        <comment>icons</comment>
+        <translation>Dari tema</translation>
+    </message>
+    <message>
+        <location filename="../batterywatchersettings.cpp" line="42"/>
+        <source>Circle</source>
+        <comment>icons</comment>
+        <translation>Lingkaran</translation>
+    </message>
+    <message>
+        <location filename="../batterywatchersettings.cpp" line="43"/>
+        <source>Circle with percentage</source>
+        <comment>icons</comment>
+        <translation>Lingkaran dengan persentase</translation>
+    </message>
+    <message>
+        <location filename="../batterywatchersettings.cpp" line="44"/>
+        <source>Battery with percentage and background</source>
+        <comment>icons</comment>
+        <translation>Batre dengan persentase dengan latar belakang</translation>
+    </message>
+    <message>
+        <location filename="../batterywatchersettings.cpp" line="45"/>
+        <source>Battery with percentage</source>
+        <comment>icons</comment>
+        <translation>Batre dengan persentase</translation>
+    </message>
+    <message>
+        <location filename="../batterywatchersettings.cpp" line="104"/>
         <source>built in</source>
         <translation>bawaan</translation>
     </message>
     <message>
-        <location filename="../batterywatchersettings.cpp" line="98"/>
+        <location filename="../batterywatchersettings.cpp" line="109"/>
         <source>Level: %1%</source>
         <translation>Level: %1%</translation>
     </message>
@@ -83,55 +113,72 @@
         <translation>Aktifkan Pemantau Siaga</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="34"/>
-        <source>When idle then:</source>
-        <translation>Saat siaga maka:</translation>
-    </message>
-    <message>
-        <location filename="../idlenesswatchersettings.ui" line="53"/>
-        <location filename="../idlenesswatchersettings.ui" line="123"/>
+        <location filename="../idlenesswatchersettings.ui" line="151"/>
         <source>Idle time:</source>
         <translation>Waktu siaga:</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="66"/>
-        <source> minutes</source>
-        <translation> menit</translation>
-    </message>
-    <message>
-        <location filename="../idlenesswatchersettings.ui" line="79"/>
-        <source> seconds</source>
-        <translation> detik</translation>
-    </message>
-    <message>
-        <location filename="../idlenesswatchersettings.ui" line="94"/>
+        <location filename="../idlenesswatchersettings.ui" line="122"/>
         <source>Enable Backlight Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktifkan Perubahan Lampu Latar</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="103"/>
+        <location filename="../idlenesswatchersettings.ui" line="83"/>
+        <source>When idle on Battery:</source>
+        <translation>Saat baterai siaga:</translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="90"/>
+        <source>Battery Idle time:</source>
+        <translation>Waktu siaga baterai:</translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="131"/>
         <source>Backlight (%):</source>
-        <translation type="unfinished"></translation>
+        <translation>Lampu latar (%):</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="130"/>
+        <location filename="../idlenesswatchersettings.ui" line="158"/>
         <source>Minutes:Seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Menit:Detik</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="150"/>
+        <location filename="../idlenesswatchersettings.ui" line="76"/>
+        <location filename="../idlenesswatchersettings.ui" line="110"/>
+        <location filename="../idlenesswatchersettings.ui" line="178"/>
         <source>mm:ss</source>
-        <translation type="unfinished"></translation>
+        <translation>menit:detik</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="157"/>
+        <location filename="../idlenesswatchersettings.ui" line="34"/>
+        <source>When idle on AC:</source>
+        <translation>Saat siaga dengan AC:</translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="53"/>
+        <source>AC Idle time:</source>
+        <translation>waktu siaga AC:</translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="63"/>
+        <location filename="../idlenesswatchersettings.ui" line="97"/>
+        <source>Minutes:Seconds (min: 01:30)</source>
+        <translation>Menit:Detik (min: 01:30)</translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="185"/>
         <source>Check backlight</source>
-        <translation type="unfinished"></translation>
+        <translation>Memerika Lampu latar</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="164"/>
+        <location filename="../idlenesswatchersettings.ui" line="192"/>
         <source>On battery discharging </source>
-        <translation type="unfinished"></translation>
+        <translation>Pada pengurasan batery </translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="208"/>
+        <source>Disable idleness checks when fullscreen</source>
+        <translation>Nonaktifkan pemeriksaan kesiagaan saat layar penuh</translation>
     </message>
 </context>
 <context>
@@ -143,14 +190,14 @@
     </message>
     <message>
         <location filename="../lidwatchersettings.ui" line="38"/>
-        <source>Action when lid is closed</source>
-        <translation>Tindakan saat lid ditutup</translation>
+        <source>Action when lid is closed:</source>
+        <translation>Tindakan saat lid ditutup:</translation>
     </message>
     <message>
         <location filename="../lidwatchersettings.ui" line="50"/>
         <location filename="../lidwatchersettings.ui" line="115"/>
-        <source>On Battery</source>
-        <translation>Pada Baterai</translation>
+        <source>On Battery:</source>
+        <translation>Pada Baterai:</translation>
     </message>
     <message>
         <location filename="../lidwatchersettings.ui" line="58"/>
@@ -175,8 +222,8 @@
     <message>
         <location filename="../lidwatchersettings.ui" line="81"/>
         <location filename="../lidwatchersettings.ui" line="125"/>
-        <source>On AC</source>
-        <translation>Pada AC</translation>
+        <source>On AC:</source>
+        <translation>Pada AC:</translation>
     </message>
     <message>
         <location filename="../lidwatchersettings.ui" line="94"/>
@@ -199,7 +246,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="44"/>
         <source>Lid</source>
-        <translation>Lid</translation>
+        <translation>Penutup</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="48"/>
@@ -209,7 +256,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="52"/>
         <source>Power keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Tombol daya</translation>
     </message>
 </context>
 <context>
@@ -217,26 +264,31 @@
     <message>
         <location filename="../powerkeyssettings.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Borang</translation>
     </message>
     <message>
         <location filename="../powerkeyssettings.ui" line="20"/>
         <source>Handle Power Keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Menangani Tombol Daya</translation>
     </message>
     <message>
         <location filename="../powerkeyssettings.ui" line="26"/>
-        <source>Power Key Action</source>
-        <translation type="unfinished"></translation>
+        <source>Power Key Action:</source>
+        <translation>Aksi Kunci Power:</translation>
     </message>
     <message>
         <location filename="../powerkeyssettings.ui" line="42"/>
-        <source>Suspend Key Action</source>
-        <translation type="unfinished"></translation>
+        <source>Suspend Key Action:</source>
+        <translation type="unfinished">Menanggungkan tindakan:</translation>
     </message>
     <message>
         <location filename="../powerkeyssettings.ui" line="49"/>
-        <source>Hibernate Key Action</source>
+        <source>Hibernate Key Action:</source>
+        <translation>Aksi Kunci Hibernasi:</translation>
+    </message>
+    <message>
+        <location filename="../powerkeyssettings.cpp" line="48"/>
+        <source>Note: Under Wayland, power keys are configured by the compositor instead.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -248,32 +300,32 @@
         <translation>Tidak ada</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="36"/>
+        <location filename="../helpers.cpp" line="38"/>
         <source>Ask</source>
-        <translation type="unfinished"></translation>
+        <translation>Tanya</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="37"/>
+        <location filename="../helpers.cpp" line="40"/>
         <source>Lock screen</source>
         <translation>Kunci layar</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="38"/>
+        <location filename="../helpers.cpp" line="41"/>
         <source>Suspend</source>
         <translation>Suspensi</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="39"/>
+        <location filename="../helpers.cpp" line="42"/>
         <source>Hibernate</source>
         <translation>Hibernasi</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="40"/>
+        <location filename="../helpers.cpp" line="43"/>
         <source>Shutdown</source>
         <translation>Matikan</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="41"/>
+        <location filename="../helpers.cpp" line="44"/>
         <source>Turn Off monitor(s)</source>
         <translation>Matikan monitor</translation>
     </message>

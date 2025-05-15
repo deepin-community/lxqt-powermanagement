@@ -35,22 +35,22 @@
     </message>
     <message>
         <location filename="../batterywatchersettings.ui" line="111"/>
-        <source>Use icons from theme:</source>
-        <translation>テーマのアイコンを用いる:</translation>
+        <source>Icon:</source>
+        <translation>アイコン:</translation>
     </message>
     <message>
-        <location filename="../batterywatchersettings.ui" line="125"/>
-        <location filename="../batterywatchersettings.cpp" line="93"/>
+        <location filename="../batterywatchersettings.ui" line="121"/>
+        <location filename="../batterywatchersettings.cpp" line="104"/>
         <source>Preview</source>
         <translation>プレビュー</translation>
     </message>
     <message>
-        <location filename="../batterywatchersettings.ui" line="162"/>
+        <location filename="../batterywatchersettings.ui" line="158"/>
         <source>Charging</source>
         <translation>充電中</translation>
     </message>
     <message>
-        <location filename="../batterywatchersettings.ui" line="200"/>
+        <location filename="../batterywatchersettings.ui" line="196"/>
         <source>Discharging</source>
         <translation>放電中</translation>
     </message>
@@ -65,12 +65,42 @@
         <translation>トレイにアイコンを表示:</translation>
     </message>
     <message>
-        <location filename="../batterywatchersettings.cpp" line="93"/>
+        <location filename="../batterywatchersettings.cpp" line="41"/>
+        <source>from theme</source>
+        <comment>icons</comment>
+        <translation>テーマから</translation>
+    </message>
+    <message>
+        <location filename="../batterywatchersettings.cpp" line="42"/>
+        <source>Circle</source>
+        <comment>icons</comment>
+        <translation>円</translation>
+    </message>
+    <message>
+        <location filename="../batterywatchersettings.cpp" line="43"/>
+        <source>Circle with percentage</source>
+        <comment>icons</comment>
+        <translation>パーセント付きの円</translation>
+    </message>
+    <message>
+        <location filename="../batterywatchersettings.cpp" line="44"/>
+        <source>Battery with percentage and background</source>
+        <comment>icons</comment>
+        <translation>背景のあるパーセント付きバッテリー</translation>
+    </message>
+    <message>
+        <location filename="../batterywatchersettings.cpp" line="45"/>
+        <source>Battery with percentage</source>
+        <comment>icons</comment>
+        <translation>パーセント付きバッテリー</translation>
+    </message>
+    <message>
+        <location filename="../batterywatchersettings.cpp" line="104"/>
         <source>built in</source>
         <translation>内蔵のアイコン</translation>
     </message>
     <message>
-        <location filename="../batterywatchersettings.cpp" line="98"/>
+        <location filename="../batterywatchersettings.cpp" line="109"/>
         <source>Level: %1%</source>
         <translation>レベル: %1%</translation>
     </message>
@@ -83,55 +113,72 @@
         <translation>アイドル状態を監視する(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="34"/>
-        <source>When idle then:</source>
-        <translation>アイドル時には:</translation>
-    </message>
-    <message>
-        <location filename="../idlenesswatchersettings.ui" line="53"/>
-        <location filename="../idlenesswatchersettings.ui" line="123"/>
+        <location filename="../idlenesswatchersettings.ui" line="151"/>
         <source>Idle time:</source>
         <translation>アイドル状態の時間:</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="66"/>
-        <source> minutes</source>
-        <translation> 分</translation>
-    </message>
-    <message>
-        <location filename="../idlenesswatchersettings.ui" line="79"/>
-        <source> seconds</source>
-        <translation> 秒</translation>
-    </message>
-    <message>
-        <location filename="../idlenesswatchersettings.ui" line="94"/>
+        <location filename="../idlenesswatchersettings.ui" line="122"/>
         <source>Enable Backlight Change</source>
         <translation>バックライトの変更を有効にする</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="103"/>
+        <location filename="../idlenesswatchersettings.ui" line="83"/>
+        <source>When idle on Battery:</source>
+        <translation>バッテリー電源でアイドル時に:</translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="90"/>
+        <source>Battery Idle time:</source>
+        <translation>バッテリーアイドル時間:</translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="131"/>
         <source>Backlight (%):</source>
         <translation>バックライト (%):</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="130"/>
+        <location filename="../idlenesswatchersettings.ui" line="158"/>
         <source>Minutes:Seconds</source>
         <translation>分:秒</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="150"/>
+        <location filename="../idlenesswatchersettings.ui" line="76"/>
+        <location filename="../idlenesswatchersettings.ui" line="110"/>
+        <location filename="../idlenesswatchersettings.ui" line="178"/>
         <source>mm:ss</source>
         <translation>mm:ss</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="157"/>
+        <location filename="../idlenesswatchersettings.ui" line="34"/>
+        <source>When idle on AC:</source>
+        <translation>AC 電源でアイドル時に:</translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="53"/>
+        <source>AC Idle time:</source>
+        <translation>AC アイドル時間:</translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="63"/>
+        <location filename="../idlenesswatchersettings.ui" line="97"/>
+        <source>Minutes:Seconds (min: 01:30)</source>
+        <translation>分:秒 (最小: 01:30)</translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="185"/>
         <source>Check backlight</source>
         <translation>バックライトの確認</translation>
     </message>
     <message>
-        <location filename="../idlenesswatchersettings.ui" line="164"/>
+        <location filename="../idlenesswatchersettings.ui" line="192"/>
         <source>On battery discharging </source>
         <translation>バッテリー放電時 </translation>
+    </message>
+    <message>
+        <location filename="../idlenesswatchersettings.ui" line="208"/>
+        <source>Disable idleness checks when fullscreen</source>
+        <translation>全画面時にアイドル状態の確認を無効にする</translation>
     </message>
 </context>
 <context>
@@ -143,14 +190,14 @@
     </message>
     <message>
         <location filename="../lidwatchersettings.ui" line="38"/>
-        <source>Action when lid is closed</source>
-        <translation>ふたを閉じた時の動作</translation>
+        <source>Action when lid is closed:</source>
+        <translation>ふたを閉じた時の動作:</translation>
     </message>
     <message>
         <location filename="../lidwatchersettings.ui" line="50"/>
         <location filename="../lidwatchersettings.ui" line="115"/>
-        <source>On Battery</source>
-        <translation>バッテリー電源の時</translation>
+        <source>On Battery:</source>
+        <translation>バッテリー電源の時:</translation>
     </message>
     <message>
         <location filename="../lidwatchersettings.ui" line="58"/>
@@ -175,8 +222,8 @@
     <message>
         <location filename="../lidwatchersettings.ui" line="81"/>
         <location filename="../lidwatchersettings.ui" line="125"/>
-        <source>On AC</source>
-        <translation>AC 電源の時</translation>
+        <source>On AC:</source>
+        <translation>AC 電源の時:</translation>
     </message>
     <message>
         <location filename="../lidwatchersettings.ui" line="94"/>
@@ -226,18 +273,23 @@
     </message>
     <message>
         <location filename="../powerkeyssettings.ui" line="26"/>
-        <source>Power Key Action</source>
-        <translation>[電源]キーの動作</translation>
+        <source>Power Key Action:</source>
+        <translation>[電源]キーの動作:</translation>
     </message>
     <message>
         <location filename="../powerkeyssettings.ui" line="42"/>
-        <source>Suspend Key Action</source>
-        <translation>[サスペンド]キーのアクション</translation>
+        <source>Suspend Key Action:</source>
+        <translation>[サスペンド]キーの動作:</translation>
     </message>
     <message>
         <location filename="../powerkeyssettings.ui" line="49"/>
-        <source>Hibernate Key Action</source>
-        <translation>[ハイバネート]キーの動作</translation>
+        <source>Hibernate Key Action:</source>
+        <translation>[ハイバネート]キーの動作:</translation>
+    </message>
+    <message>
+        <location filename="../powerkeyssettings.cpp" line="48"/>
+        <source>Note: Under Wayland, power keys are configured by the compositor instead.</source>
+        <translation>注: Wayland では、電源キーは代わりにコンポジターによって設定されます。</translation>
     </message>
 </context>
 <context>
@@ -248,34 +300,34 @@
         <translation>何もしない</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="36"/>
+        <location filename="../helpers.cpp" line="38"/>
         <source>Ask</source>
         <translation>問い合わせ</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="37"/>
+        <location filename="../helpers.cpp" line="40"/>
         <source>Lock screen</source>
-        <translation>画面のロック</translation>
+        <translation>画面ロック</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="38"/>
+        <location filename="../helpers.cpp" line="41"/>
         <source>Suspend</source>
         <translation>サスペンド</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="39"/>
+        <location filename="../helpers.cpp" line="42"/>
         <source>Hibernate</source>
         <translation>ハイバネート</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="40"/>
+        <location filename="../helpers.cpp" line="43"/>
         <source>Shutdown</source>
         <translation>シャットダウン</translation>
     </message>
     <message>
-        <location filename="../helpers.cpp" line="41"/>
+        <location filename="../helpers.cpp" line="44"/>
         <source>Turn Off monitor(s)</source>
-        <translation>モニターを消す</translation>
+        <translation>モニターの電源オフ</translation>
     </message>
 </context>
 </TS>

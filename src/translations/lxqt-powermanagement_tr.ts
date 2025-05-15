@@ -4,109 +4,133 @@
 <context>
     <name>BatteryHelper</name>
     <message>
-        <location filename="../batteryhelper.cpp" line="42"/>
-        <source>Empty</source>
-        <translation>Boş</translation>
+        <location filename="../batteryhelper.cpp" line="44"/>
+        <source>Stable</source>
+        <translation>Kararlı</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="44"/>
+        <location filename="../batteryhelper.cpp" line="46"/>
         <source>Discharging</source>
         <translation>Boşalıyor</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="46"/>
+        <location filename="../batteryhelper.cpp" line="48"/>
         <source>Fully charged</source>
         <translation>Tamamen doldu</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="49"/>
+        <location filename="../batteryhelper.cpp" line="51"/>
         <source>Charging</source>
         <translation>Doluyor</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="58"/>
+        <location filename="../batteryhelper.cpp" line="60"/>
         <source>Lithium ion</source>
         <translation>Lityum iyon</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="60"/>
+        <location filename="../batteryhelper.cpp" line="62"/>
         <source>Lithium polymer</source>
         <translation>Lityum polimer</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="62"/>
+        <location filename="../batteryhelper.cpp" line="64"/>
         <source>Lithium iron phosphate</source>
         <translation>Lityum demir fosfat</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="64"/>
+        <location filename="../batteryhelper.cpp" line="66"/>
         <source>Lead acid</source>
         <translation>Kurşun asit</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="66"/>
+        <location filename="../batteryhelper.cpp" line="68"/>
         <source>Nickel cadmium</source>
         <translation>Nikel kadmiyum</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="68"/>
+        <location filename="../batteryhelper.cpp" line="70"/>
         <source>Nickel metal hydride</source>
         <translation>Nikel metal hidrid</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="71"/>
+        <location filename="../batteryhelper.cpp" line="73"/>
         <source>Unknown</source>
         <translation>Bilinmeyen</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="80"/>
+        <location filename="../batteryhelper.cpp" line="82"/>
         <source>Personal Digital Assistant&apos;s battery</source>
         <translation>Kişisel Dijital Asistan&apos;ın bataryası</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="82"/>
+        <location filename="../batteryhelper.cpp" line="84"/>
         <source>Uninterruptible Power Supply&apos;s battery</source>
         <translation>Kesintisiz Güç Kaynağı&apos;nın bataryası</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="84"/>
+        <location filename="../batteryhelper.cpp" line="86"/>
         <source>Primary battery</source>
         <translation>Birincil batarya</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="86"/>
+        <location filename="../batteryhelper.cpp" line="88"/>
         <source>Mouse battery</source>
         <translation>Fare bataryası</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="88"/>
+        <location filename="../batteryhelper.cpp" line="90"/>
         <source>Keyboard battery</source>
         <translation>Klavye batarya</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="90"/>
+        <location filename="../batteryhelper.cpp" line="92"/>
         <source>Keyboard and mouse&apos;s battery</source>
         <translation>Klavye ve fare&apos;nin bataryası</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="92"/>
+        <location filename="../batteryhelper.cpp" line="94"/>
         <source>Camera battery</source>
         <translation>Kamera bataryası</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="94"/>
+        <location filename="../batteryhelper.cpp" line="96"/>
         <source>Phone battery</source>
         <translation>Telefon bataryası</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="96"/>
+        <location filename="../batteryhelper.cpp" line="98"/>
         <source>Monitor battery</source>
         <translation>Ekran bataryası</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="99"/>
+        <location filename="../batteryhelper.cpp" line="101"/>
         <source>Unknown battery</source>
         <translation>Bilinmeyen batarya</translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../batteryhelper.cpp" line="111"/>
+        <source>%Ln hour(s)</source>
+        <translation>
+            <numerusform>%Ln saat</numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../batteryhelper.cpp" line="112"/>
+        <source>%Ln minute(s)</source>
+        <translation>
+            <numerusform>%Ln dakika</numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../batteryhelper.cpp" line="117"/>
+        <source>remaining %1</source>
+        <translation>kalan %1</translation>
+    </message>
+    <message>
+        <location filename="../batteryhelper.cpp" line="122"/>
+        <source>to full %1</source>
+        <translation>doldurmak için %1</translation>
     </message>
 </context>
 <context>
@@ -179,6 +203,11 @@
         <source>Vendor:</source>
         <translation>Üretici:</translation>
     </message>
+    <message>
+        <location filename="../batteryinfoframe.cpp" line="65"/>
+        <source>Empty</source>
+        <translation>Boş</translation>
+    </message>
 </context>
 <context>
     <name>BatteryWatcher</name>
@@ -193,29 +222,29 @@
         <translation>LXQt bir batarya verisi bulamadı - izleme iptal edildi</translation>
     </message>
     <message>
-        <location filename="../batterywatcher.cpp" line="114"/>
+        <location filename="../batterywatcher.cpp" line="119"/>
         <source>Power low!</source>
         <translation>Düşük güç!</translation>
     </message>
     <message numerus="yes">
-        <location filename="../batterywatcher.cpp" line="126"/>
-        <source>Suspending in %n second(s)</source>
+        <location filename="../batterywatcher.cpp" line="131"/>
+        <source>Suspending in %Ln second(s)</source>
         <translation>
-            <numerusform>%n saniyedir beklemede</numerusform>
+            <numerusform>%Ln saniye içinde askıya alınacak</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../batterywatcher.cpp" line="129"/>
-        <source>Hibernating in %n second(s)</source>
+        <location filename="../batterywatcher.cpp" line="134"/>
+        <source>Hibernating in %Ln second(s)</source>
         <translation>
-            <numerusform>%n saniyedir uykuda</numerusform>
+            <numerusform>%Ln saniye içinde beklemeye alınacak</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../batterywatcher.cpp" line="132"/>
-        <source>Shutting down in %n second(s)</source>
+        <location filename="../batterywatcher.cpp" line="137"/>
+        <source>Shutting down in %Ln second(s)</source>
         <translation>
-            <numerusform>%n saniyede kapanıyor</numerusform>
+            <numerusform>%Ln saniye içinde kapanacak</numerusform>
         </translation>
     </message>
 </context>
@@ -260,38 +289,73 @@ Bunu ayarlardan yapılandırabilirsiniz... </translation>
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../trayicon.cpp" line="61"/>
+        <location filename="../trayicon.cpp" line="68"/>
         <source>Configure</source>
         <translation>Yapılandır</translation>
     </message>
     <message>
-        <location filename="../trayicon.cpp" line="63"/>
-        <location filename="../trayicon.cpp" line="94"/>
+        <location filename="../trayicon.cpp" line="76"/>
+        <source>30 minutes</source>
+        <translation>30 dakika</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="80"/>
+        <source>1 hour</source>
+        <translation>1 saat</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="84"/>
+        <source>2 hours</source>
+        <translation>2 saat</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="88"/>
+        <source>3 hours</source>
+        <translation>2 saat</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="92"/>
+        <source>4 hours</source>
+        <translation>4 saat</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="97"/>
+        <source>Pause idleness checks</source>
+        <translation>Boşta bekleme denetimlerini duraklat</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="102"/>
+        <location filename="../trayicon.cpp" line="194"/>
         <source>About</source>
         <translation>Hakkında</translation>
     </message>
     <message>
-        <location filename="../trayicon.cpp" line="65"/>
+        <location filename="../trayicon.cpp" line="104"/>
         <source>Disable icon</source>
         <translation>Simgeyi etkisizleştir</translation>
     </message>
     <message>
-        <location filename="../trayicon.cpp" line="95"/>
+        <location filename="../trayicon.cpp" line="163"/>
+        <source>Empty</source>
+        <translation>Boş</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="195"/>
         <source>&lt;p&gt;  &lt;b&gt;LXQt Power Management&lt;/b&gt;&lt;br/&gt;  - Power Management for the LXQt Desktop Environment&lt;/p&gt;&lt;p&gt;  Authors:&lt;br/&gt;  &amp;nbsp; Christian Surlykke, Alec Moskvin&lt;br/&gt;  &amp;nbsp; - and others from the Razor and LXQt projects&lt;/p&gt;&lt;p&gt;  Copyright &amp;copy; 2012-2014&lt;/p&gt;</source>
         <translation>&lt;p&gt;  &lt;b&gt;LXQt Güç Yönetimi&lt;/b&gt;&lt;br/&gt;  -LXQt Masaüstü Ortamı için Güç Yöneticisi&lt;/p&gt;&lt;p&gt;  Yazarlar:&lt;br/&gt;  &amp;nbsp; Christian Surlykke, Alec Moskvin&lt;br/&gt;  &amp;nbsp; - ve Razor ve LXQt projelerinden diğerleri&lt;/p&gt;&lt;p&gt;  Telif Hakkı: &amp;copy; 2012-2014&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../trayicon.cpp" line="113"/>
+        <location filename="../trayicon.cpp" line="213"/>
         <source>LXQt Power Management info</source>
         <translation>LXQT Güç Yönetimi bilgisi</translation>
     </message>
     <message>
-        <location filename="../trayicon.cpp" line="114"/>
+        <location filename="../trayicon.cpp" line="214"/>
         <source>The LXQt Power Management tray icon can be (re)enabled in &lt;i&gt;lxqt-config-powermanagement&lt;/i&gt;</source>
         <translation>LXQt Güç Yönetimi sistem çekmecesi simgesi &lt;i&gt;lxqt-config-powermanagement&lt;/i&gt;&apos;tan (yeniden) etkinleştirilebilir</translation>
     </message>
     <message>
-        <location filename="../trayicon.cpp" line="116"/>
+        <location filename="../trayicon.cpp" line="216"/>
         <source>Configure now</source>
         <translation>Şimdi yapılandır</translation>
     </message>
