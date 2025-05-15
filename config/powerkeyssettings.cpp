@@ -35,20 +35,24 @@ PowerKeysSettings::PowerKeysSettings(QWidget *parent) :
     mUi(new Ui::PowerKeysSettings)
 {
     mUi->setupUi(this);
-    fillComboBox(mUi->powerKeyActionComboBox);
-    fillComboBox(mUi->suspendKeyActionComboBox);
-    fillComboBox(mUi->hibernateKeyActionComboBox);
+    fillComboBox(mUi->powerKeyActionComboBox, true);
+    fillComboBox(mUi->suspendKeyActionComboBox, true);
+    fillComboBox(mUi->hibernateKeyActionComboBox, true);
 
-    connect(mUi->powerKeyActionComboBox, SIGNAL(activated(int)), this, SLOT(saveSettings()));
-    connect(mUi->suspendKeyActionComboBox, SIGNAL(activated(int)), this, SLOT(saveSettings()));
-    connect(mUi->hibernateKeyActionComboBox, SIGNAL(activated(int)), this, SLOT(saveSettings()));
+    connect(mUi->powerKeyActionComboBox, QOverload<int>::of(&QComboBox::activated), this, &PowerKeysSettings::saveSettings);
+    connect(mUi->suspendKeyActionComboBox, QOverload<int>::of(&QComboBox::activated), this, &PowerKeysSettings::saveSettings);
+    connect(mUi->hibernateKeyActionComboBox, QOverload<int>::of(&QComboBox::activated), this, &PowerKeysSettings::saveSettings);
+
+    if (QGuiApplication::platformName() == QStringLiteral("wayland"))
+    {
+        mUi->waylandLabel->setText(tr("Note: Under Wayland, power keys are configured by the compositor instead."));
+    }
 }
-
 
 PowerKeysSettings::~PowerKeysSettings()
 {
+    delete mUi;
 }
-
 
 void PowerKeysSettings::loadSettings()
 {
@@ -56,7 +60,6 @@ void PowerKeysSettings::loadSettings()
     setComboBoxToValue(mUi->suspendKeyActionComboBox, mSettings.getSuspendKeyAction());
     setComboBoxToValue(mUi->hibernateKeyActionComboBox, mSettings.getHibernateKeyAction());
 }
-
 
 void PowerKeysSettings::saveSettings()
 {

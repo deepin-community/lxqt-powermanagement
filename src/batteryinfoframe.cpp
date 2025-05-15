@@ -44,13 +44,13 @@ BatteryInfoFrame::BatteryInfoFrame(Solid::Battery *battery) :
     mUi->typeValue->setText(BatteryHelper::typeToString(mBattery->type()));
     mUi->technologyValue->setText(BatteryHelper::technologyToString(mBattery->technology()));
 
-    QString vendor = QString::fromLatin1("%1 %2").arg(battery->recallVendor()).arg(battery->serial());
+    QString vendor = QString::fromLatin1("%1 %2").arg( QSL("Unknown") , battery->serial() );
     if (vendor.trimmed().isEmpty())
         vendor = QSL("Unknown");
     mUi->vendorValue->setText(vendor);
 
-    connect(mBattery, SIGNAL(energyChanged(double, const QString)), this, SLOT(onBatteryChanged()));
-    connect(mBattery, SIGNAL(chargeStateChanged(int, const QString)), this, SLOT(onBatteryChanged()));
+    connect(mBattery, &Solid::Battery::energyChanged, this, &BatteryInfoFrame::onBatteryChanged);
+    connect(mBattery, &Solid::Battery::chargeStateChanged, this, &BatteryInfoFrame::onBatteryChanged);
     onBatteryChanged();
 }
 
@@ -61,7 +61,8 @@ BatteryInfoFrame::~BatteryInfoFrame()
 
 void BatteryInfoFrame::onBatteryChanged()
 {
-    mUi->stateValue->setText(BatteryHelper::stateToString(mBattery->chargeState()));
+    mUi->stateValue->setText(mBattery->chargePercent() <= 0 && mBattery->chargeState() == Solid::Battery::NoCharge ?
+                             tr("Empty") : BatteryHelper::stateToString(mBattery->chargeState()));
     mUi->energyFullValue->setText(QString::fromLatin1("%1 Wh (%2 %)").arg(mBattery->energyFull(), 0, 'f', 2).arg(mBattery->capacity()));
     mUi->energyValue->setText(QString::fromLatin1("%1 Wh (%2 %)").arg(mBattery->energy(), 0, 'f', 2).arg(mBattery->chargePercent()));
     mUi->energyRateValue->setText(QString::fromLatin1("%1 W").arg(mBattery->energyRate(), 0, 'f', 2));

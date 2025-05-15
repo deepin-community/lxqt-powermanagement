@@ -29,6 +29,9 @@
 
 #include "powermanagementsettings.h"
 
+// the pause state is only for the tray icon and is not saved
+bool PowerManagementSettings::mIdlenessWatcherPaused = false;
+
 namespace PowerManagementSettingsConstants
 {
     const QString RUN_CHECK_LEVEL { QSL("runCheckLevel") };
@@ -46,11 +49,15 @@ namespace PowerManagementSettingsConstants
     const QString POWER_LOW_LEVEL_KEY { QL1S("powerLowLevel") };
     const QString SHOW_ICON_KEY { QL1S("showIcon") };
     const QString USE_THEME_ICONS_KEY { QL1S("useThemeIcons") };
-    const QString IDLENESS_ACTION_KEY { QL1S("idlenessAction") };
-    const QString IDLENESS_TIME_SECS_KEY { QL1S("idlenessTimeSecs") };
+    const QString ICON_TYPE_KEY { QL1S("iconType") };
+    const QString IDLENESS_AC_ACTION_KEY { QL1S("idlenessACAction") };
+    const QString IDLENESS_AC_TIME { QL1S("idlenessACTime") };
+    const QString IDLENESS_BATTERY_ACTION_KEY { QL1S("idlenessBatteryAction") };
+    const QString IDLENESS_BATTERY_TIME { QL1S("idlenessBatteryTime") };
     const QString IDLENESS_BACKLIGHT_TIME { QL1S("idlenessTime") };
     const QString IDLENESS_BACKLIGHT { QL1S("backlightIdleness") };
     const QString IDLENESS_BACKLIGHT_ON_BATTERY_DISCHARGING { QL1S("backlightIdlenessOnBatteryDischarging") };
+    const QString DISABLE_IDLENESS_WHEN_FULLSCREEN { QL1S("disableIdlenessWhenFullscreen") };
     const QString POWER_KEY_ACTION { QL1S("powerKeyAction") };
     const QString SUSPEND_KEY_ACTION { QL1S("suspendKeyAction") };
     const QString HIBERNATE_KEY_ACTION { QL1S("hibernateKeyAction") };
@@ -126,15 +133,21 @@ void PowerManagementSettings::setShowIcon(bool showIcon)
     setValue(SHOW_ICON_KEY, showIcon);
 }
 
-bool PowerManagementSettings::isUseThemeIcons()
+PowerManagementSettings::IconType PowerManagementSettings::getIconType() const
 {
-    return value(USE_THEME_ICONS_KEY, false).toBool();
+    const QVariant v = value(ICON_TYPE_KEY);
+    if (v.isValid())
+        return v.value<IconType>();
+
+    // fallback to legacy values
+    return value(USE_THEME_ICONS_KEY, false).toBool() ? ICON_THEME : ICON_CIRCLE;
 }
 
-void PowerManagementSettings::setUseThemeIcons(bool useThemeIcons)
+void PowerManagementSettings::setIconType(IconType type)
 {
-    setValue(USE_THEME_ICONS_KEY, useThemeIcons);
+    setValue(ICON_TYPE_KEY, type);
 }
+
 
 bool PowerManagementSettings::isLidWatcherEnabled()
 {
@@ -196,28 +209,6 @@ void PowerManagementSettings::setEnableExtMonLidClosedActions(bool enableExtMonL
     setValue(ENABLE_EXT_MON_LIDCLOSED_ACTIONS_KEY, enableExtMonLidClosedActions);
 }
 
-int PowerManagementSettings::getIdlenessAction()
-{
-    // default to nothing (-1)
-    return value(IDLENESS_ACTION_KEY, -1).toInt();
-}
-
-void PowerManagementSettings::setIdlenessAction(int idlenessAction)
-{
-    setValue(IDLENESS_ACTION_KEY, idlenessAction);
-}
-
-int PowerManagementSettings::getIdlenessTimeSecs()
-{
-    // default to 15 minutes
-    return value(IDLENESS_TIME_SECS_KEY, 900).toInt();
-}
-
-void PowerManagementSettings::setIdlenessTimeSecs(int idlenessTimeSecs)
-{
-    setValue(IDLENESS_TIME_SECS_KEY, idlenessTimeSecs);
-}
-
 
 bool PowerManagementSettings::isIdlenessWatcherEnabled()
 {
@@ -227,6 +218,62 @@ bool PowerManagementSettings::isIdlenessWatcherEnabled()
 void PowerManagementSettings::setIdlenessWatcherEnabled(bool idlenessWatcherEnabled)
 {
     setValue(ENABLE_IDLENESS_WATCHER_KEY, idlenessWatcherEnabled);
+}
+
+int PowerManagementSettings::getIdlenessACAction()
+{
+    // defaults to nothing (-1) and eventually load legacy value
+    int oldValue = value(QL1S("idlenessAction"), -1).toInt();
+    return value(IDLENESS_AC_ACTION_KEY, oldValue).toInt();
+}
+
+void PowerManagementSettings::setIdlenessACAction(int idlenessAction)
+{
+    setValue(IDLENESS_AC_ACTION_KEY, idlenessAction);
+}
+
+QTime PowerManagementSettings::getIdlenessACTime()
+{
+    // 1. The default value is 15 minutes (the legacy key is also read);
+    // 2. Intervals greater than or equal to one hour aren't supported; and
+    // 3. Intervals smaller than one minute are prevented.
+    int oldValue = qBound(60, value(QL1S("idlenessTimeSecs"), 900).toInt(), 3599);
+    int m = oldValue / 60;
+    int s = oldValue - m * 60;
+    return value(IDLENESS_AC_TIME, QTime(0, m, s)).toTime();
+}
+
+void PowerManagementSettings::setIdlenessACTime(QTime idlenessTime)
+{
+    setValue(IDLENESS_AC_TIME, idlenessTime);
+}
+
+int PowerManagementSettings::getIdlenessBatteryAction()
+{
+    // defaults to nothing (-1) and eventually load legacy value
+    int oldValue = value(QL1S("idlenessAction"), -1).toInt();
+    return value(IDLENESS_BATTERY_ACTION_KEY, oldValue).toInt();
+}
+
+void PowerManagementSettings::setIdlenessBatteryAction(int idlenessAction)
+{
+    setValue(IDLENESS_BATTERY_ACTION_KEY, idlenessAction);
+}
+
+QTime PowerManagementSettings::getIdlenessBatteryTime()
+{
+    // 1. The default value is 15 minutes (the legacy key is also read);
+    // 2. Intervals greater than or equal to one hour aren't supported; and
+    // 3. Intervals smaller than one minute are prevented.
+    int oldValue = qBound(60, value(QL1S("idlenessTimeSecs"), 900).toInt(), 3599);
+    int m = oldValue / 60;
+    int s = oldValue - m * 60;
+    return value(IDLENESS_BATTERY_TIME, QTime(0, m, s)).toTime();
+}
+
+void PowerManagementSettings::setIdlenessBatteryTime(QTime idlenessTime)
+{
+    setValue(IDLENESS_BATTERY_TIME, idlenessTime);
 }
 
 bool PowerManagementSettings::isIdlenessBacklightWatcherEnabled()
@@ -270,6 +317,16 @@ void PowerManagementSettings::setIdlenessBacklightOnBatteryDischargingEnabled(bo
     setValue(IDLENESS_BACKLIGHT_ON_BATTERY_DISCHARGING, enabled);
 }
 
+bool PowerManagementSettings::isDisableIdlenessWhenFullscreenEnabled()
+{
+    return value(DISABLE_IDLENESS_WHEN_FULLSCREEN, false).toBool();
+}
+
+void PowerManagementSettings::setDisableIdlenessWhenFullscreen(bool enabled)
+{
+    setValue(DISABLE_IDLENESS_WHEN_FULLSCREEN, enabled);
+}
+
 int PowerManagementSettings::getPowerKeyAction()
 {
     return value(POWER_KEY_ACTION, LXQt::Power::Action::PowerShutdown).toInt();
@@ -299,3 +356,13 @@ void PowerManagementSettings::setHibernateKeyAction(int action)
 {
     setValue(HIBERNATE_KEY_ACTION, action);
 }
+
+bool PowerManagementSettings::isIdlenessWatcherPaused() const
+{
+    return mIdlenessWatcherPaused;
+}
+
+void PowerManagementSettings::setIdlenessWatcherPaused(bool idlenessWatcherPaused) {
+    mIdlenessWatcherPaused = idlenessWatcherPaused;
+}
+

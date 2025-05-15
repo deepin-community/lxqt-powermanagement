@@ -4,109 +4,135 @@
 <context>
     <name>BatteryHelper</name>
     <message>
-        <location filename="../batteryhelper.cpp" line="42"/>
-        <source>Empty</source>
-        <translation>Vuota</translation>
+        <location filename="../batteryhelper.cpp" line="44"/>
+        <source>Stable</source>
+        <translation>Stabile</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="44"/>
+        <location filename="../batteryhelper.cpp" line="46"/>
         <source>Discharging</source>
         <translation>In fase di scaricamento</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="46"/>
+        <location filename="../batteryhelper.cpp" line="48"/>
         <source>Fully charged</source>
         <translation>Carica completa</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="49"/>
+        <location filename="../batteryhelper.cpp" line="51"/>
         <source>Charging</source>
         <translation>In fase di carica</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="58"/>
+        <location filename="../batteryhelper.cpp" line="60"/>
         <source>Lithium ion</source>
         <translation>Ioni di litio</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="60"/>
+        <location filename="../batteryhelper.cpp" line="62"/>
         <source>Lithium polymer</source>
         <translation>Polimeri di litio</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="62"/>
+        <location filename="../batteryhelper.cpp" line="64"/>
         <source>Lithium iron phosphate</source>
         <translation>Nichel-ferro-fosfato</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="64"/>
+        <location filename="../batteryhelper.cpp" line="66"/>
         <source>Lead acid</source>
         <translation>Acido di piombo</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="66"/>
+        <location filename="../batteryhelper.cpp" line="68"/>
         <source>Nickel cadmium</source>
         <translation>Nichel-cadmio</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="68"/>
+        <location filename="../batteryhelper.cpp" line="70"/>
         <source>Nickel metal hydride</source>
         <translation>Nichel-metallo idruro</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="71"/>
+        <location filename="../batteryhelper.cpp" line="73"/>
         <source>Unknown</source>
         <translation>Sconosciuto</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="80"/>
+        <location filename="../batteryhelper.cpp" line="82"/>
         <source>Personal Digital Assistant&apos;s battery</source>
         <translation>Batteria del palmare</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="82"/>
+        <location filename="../batteryhelper.cpp" line="84"/>
         <source>Uninterruptible Power Supply&apos;s battery</source>
         <translation>Batteria del gruppo di continuità (UPS)</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="84"/>
+        <location filename="../batteryhelper.cpp" line="86"/>
         <source>Primary battery</source>
         <translation>Batteria principale</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="86"/>
+        <location filename="../batteryhelper.cpp" line="88"/>
         <source>Mouse battery</source>
         <translation>Batteria del mouse</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="88"/>
+        <location filename="../batteryhelper.cpp" line="90"/>
         <source>Keyboard battery</source>
         <translation>Batteria della tastiera</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="90"/>
+        <location filename="../batteryhelper.cpp" line="92"/>
         <source>Keyboard and mouse&apos;s battery</source>
         <translation>Batteria della tastiera e del mouse</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="92"/>
+        <location filename="../batteryhelper.cpp" line="94"/>
         <source>Camera battery</source>
         <translation>Batteria della fotocamera</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="94"/>
+        <location filename="../batteryhelper.cpp" line="96"/>
         <source>Phone battery</source>
         <translation>Batteria del telefono</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="96"/>
+        <location filename="../batteryhelper.cpp" line="98"/>
         <source>Monitor battery</source>
         <translation>Batteria del monitor</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="99"/>
+        <location filename="../batteryhelper.cpp" line="101"/>
         <source>Unknown battery</source>
         <translation>Batteria sconosciuta</translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../batteryhelper.cpp" line="111"/>
+        <source>%Ln hour(s)</source>
+        <translation>
+            <numerusform>%Ln ora</numerusform>
+            <numerusform>%Ln ore</numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../batteryhelper.cpp" line="112"/>
+        <source>%Ln minute(s)</source>
+        <translation>
+            <numerusform>%Ln minuto</numerusform>
+            <numerusform>%Ln minuti</numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../batteryhelper.cpp" line="117"/>
+        <source>remaining %1</source>
+        <translation>%1 rimanenti</translation>
+    </message>
+    <message>
+        <location filename="../batteryhelper.cpp" line="122"/>
+        <source>to full %1</source>
+        <translation>%1 mancanti</translation>
     </message>
 </context>
 <context>
@@ -179,6 +205,11 @@
         <source>Vendor:</source>
         <translation>Produttore:</translation>
     </message>
+    <message>
+        <location filename="../batteryinfoframe.cpp" line="65"/>
+        <source>Empty</source>
+        <translation>Scarica</translation>
+    </message>
 </context>
 <context>
     <name>BatteryWatcher</name>
@@ -193,32 +224,32 @@
         <translation>LXQt non è in grado di trovare dati sulla batteria - monitoraggio disabilitato</translation>
     </message>
     <message>
-        <location filename="../batterywatcher.cpp" line="114"/>
+        <location filename="../batterywatcher.cpp" line="119"/>
         <source>Power low!</source>
         <translation>Potenza scarsa!</translation>
     </message>
     <message numerus="yes">
-        <location filename="../batterywatcher.cpp" line="126"/>
-        <source>Suspending in %n second(s)</source>
+        <location filename="../batterywatcher.cpp" line="131"/>
+        <source>Suspending in %Ln second(s)</source>
         <translation>
-            <numerusform>Sospensione tra %n secondo/i</numerusform>
-            <numerusform>Sospensione tra %n secondi</numerusform>
+            <numerusform>Sospensione tra %Ln secondo</numerusform>
+            <numerusform>Sospensione tra %Ln secondi</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../batterywatcher.cpp" line="129"/>
-        <source>Hibernating in %n second(s)</source>
+        <location filename="../batterywatcher.cpp" line="134"/>
+        <source>Hibernating in %Ln second(s)</source>
         <translation>
-            <numerusform>Ibernazione tra %n secondo</numerusform>
-            <numerusform>Ibernazione tra %n secondi</numerusform>
+            <numerusform>Ibernazione tra %Ln secondo</numerusform>
+            <numerusform>Ibernazione tra %Ln secondi</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../batterywatcher.cpp" line="132"/>
-        <source>Shutting down in %n second(s)</source>
+        <location filename="../batterywatcher.cpp" line="137"/>
+        <source>Shutting down in %Ln second(s)</source>
         <translation>
-            <numerusform>Arresto tra %n secondo/i</numerusform>
-            <numerusform>Arresto tra %n secondi</numerusform>
+            <numerusform>Arresto tra %Ln secondo</numerusform>
+            <numerusform>Arresto tra %Ln secondi</numerusform>
         </translation>
     </message>
 </context>
@@ -263,38 +294,73 @@ Puoi configurarla dalle impostazioni... </translation>
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../trayicon.cpp" line="61"/>
+        <location filename="../trayicon.cpp" line="68"/>
         <source>Configure</source>
         <translation>Configura</translation>
     </message>
     <message>
-        <location filename="../trayicon.cpp" line="63"/>
-        <location filename="../trayicon.cpp" line="94"/>
+        <location filename="../trayicon.cpp" line="76"/>
+        <source>30 minutes</source>
+        <translation>30 minuti</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="80"/>
+        <source>1 hour</source>
+        <translation>1 ora</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="84"/>
+        <source>2 hours</source>
+        <translation>2 ore</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="88"/>
+        <source>3 hours</source>
+        <translation>3 ore</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="92"/>
+        <source>4 hours</source>
+        <translation>4 ore</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="97"/>
+        <source>Pause idleness checks</source>
+        <translation>Sospendi controllo inattività</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="102"/>
+        <location filename="../trayicon.cpp" line="194"/>
         <source>About</source>
         <translation>Informazioni</translation>
     </message>
     <message>
-        <location filename="../trayicon.cpp" line="65"/>
+        <location filename="../trayicon.cpp" line="104"/>
         <source>Disable icon</source>
         <translation>Disabilita l&apos;icona</translation>
     </message>
     <message>
-        <location filename="../trayicon.cpp" line="95"/>
+        <location filename="../trayicon.cpp" line="163"/>
+        <source>Empty</source>
+        <translation>Scarica</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="195"/>
         <source>&lt;p&gt;  &lt;b&gt;LXQt Power Management&lt;/b&gt;&lt;br/&gt;  - Power Management for the LXQt Desktop Environment&lt;/p&gt;&lt;p&gt;  Authors:&lt;br/&gt;  &amp;nbsp; Christian Surlykke, Alec Moskvin&lt;br/&gt;  &amp;nbsp; - and others from the Razor and LXQt projects&lt;/p&gt;&lt;p&gt;  Copyright &amp;copy; 2012-2014&lt;/p&gt;</source>
         <translation>&lt;p&gt;  &lt;b&gt;Gestione energetica di LXQt&lt;/b&gt;&lt;br/&gt;  - Gestione energetica per l&apos;ambiente desktop LXQt&lt;/p&gt;&lt;p&gt;  Autori:&lt;br/&gt;  &amp;nbsp; Christian Surlykke, Alec Moskvin&lt;br/&gt;  &amp;nbsp; - e altri dai progetti Razor e LXQt&lt;/p&gt;&lt;p&gt;  Copyright &amp;copy; 2012-2018&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../trayicon.cpp" line="113"/>
+        <location filename="../trayicon.cpp" line="213"/>
         <source>LXQt Power Management info</source>
         <translation>Informazioni sulla gestione energetica di LXQt</translation>
     </message>
     <message>
-        <location filename="../trayicon.cpp" line="114"/>
+        <location filename="../trayicon.cpp" line="214"/>
         <source>The LXQt Power Management tray icon can be (re)enabled in &lt;i&gt;lxqt-config-powermanagement&lt;/i&gt;</source>
         <translation>L&apos;icona del vassoio di sistema della gestione energetica di LXQt può essere abilitata in &lt;i&gt;lxqt-config-powermanagement&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../trayicon.cpp" line="116"/>
+        <location filename="../trayicon.cpp" line="216"/>
         <source>Configure now</source>
         <translation>Configura ora</translation>
     </message>

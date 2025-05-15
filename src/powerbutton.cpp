@@ -64,7 +64,7 @@ PowerButton::PowerButton(QObject *parent) : Watcher(parent)
     mFdHibernate = manager.call(QL1S("Inhibit"), QL1S("handle-hibernate-key"), QL1S("lxqt-powermanager"), 
         QL1S("lxqt-powermanager controls hibernate key"), QL1S("block"));
     error = manager.lastError();
-    qDebug() << QStringLiteral("HibenateButton") << error.name() << error.message() ;
+    qDebug() << QStringLiteral("HibernateButton") << error.name() << error.message() ;
 
     //LXQt::Notification::notify(QL1S("powermanager"), QStringLiteral("Fd %1").arg(mFd.value().fileDescriptor()));
 
@@ -72,21 +72,21 @@ PowerButton::PowerButton(QObject *parent) : Watcher(parent)
         QStringLiteral("/powermanager/keypoweroff"), tr("Power off key action"), this);
 
     if (mKeyPowerButton) {
-        connect(mKeyPowerButton, SIGNAL(activated()), this, SLOT(handleShortcutPoweroff()));
+        connect(mKeyPowerButton, &GlobalKeyShortcut::Action::activated, this, &PowerButton::handleShortcutPoweroff);
     }
     
     mKeySuspendButton = GlobalKeyShortcut::Client::instance()->addAction(QStringLiteral("XF86Suspend"), 
         QStringLiteral("/powermanager/keysuspend"), tr("Suspend key action"), this);
 
     if (mKeySuspendButton) {
-        connect(mKeySuspendButton, SIGNAL(activated()), this, SLOT(handleShortcutSuspend()));
+        connect(mKeySuspendButton, &GlobalKeyShortcut::Action::activated, this, &PowerButton::handleShortcutSuspend);
     }
     
     mKeyHibernateButton = GlobalKeyShortcut::Client::instance()->addAction(QStringLiteral("XF86Sleep"), 
         QStringLiteral("/powermanager/keyhibernate"), tr("Hibernate key action"), this);
 
     if (mKeyHibernateButton) {
-        connect(mKeyHibernateButton, SIGNAL(activated()), this, SLOT(handleShortcutHibernate()));
+        connect(mKeyHibernateButton, &GlobalKeyShortcut::Action::activated, this, &PowerButton::handleShortcutHibernate);
     }
 }
 

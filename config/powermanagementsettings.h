@@ -39,6 +39,15 @@ class PowerManagementSettings : public LXQt::Settings
     Q_OBJECT
 
 public:
+    enum IconType {
+        ICON_THEME
+            , ICON_CIRCLE
+            , ICON_CIRCLE_ENHANCED
+            , ICON_BATTERY
+            , ICON_BATTERY_OPAQUE
+    };
+
+public:
     PowerManagementSettings(QObject* parent = nullptr);
     ~PowerManagementSettings() override;
 
@@ -60,8 +69,9 @@ public:
     bool isShowIcon();
     void setShowIcon(bool showIcon);
 
-    bool isUseThemeIcons();
-    void setUseThemeIcons(bool useThemeIcons);
+    inline bool isUseThemeIcons() { return getIconType() == ICON_THEME; }
+    IconType getIconType() const;
+    void setIconType(IconType type);
 
 
     bool isLidWatcherEnabled();
@@ -82,14 +92,21 @@ public:
     bool isEnableExtMonLidClosedActions();
     void setEnableExtMonLidClosedActions(bool enableExtMonLidClosedActions);
 
-    int getIdlenessAction();
-    void setIdlenessAction(int idlenessAction);
-
-    int getIdlenessTimeSecs();
-    void setIdlenessTimeSecs(int idlenessTimeSecs);
 
     bool isIdlenessWatcherEnabled();
     void setIdlenessWatcherEnabled(bool idlenessWatcherEnabled);
+
+    int getIdlenessACAction();
+    void setIdlenessACAction(int idlenessAction);
+
+    QTime getIdlenessACTime();
+    void setIdlenessACTime(QTime idlenessTime);
+
+    int getIdlenessBatteryAction();
+    void setIdlenessBatteryAction(int idlenessAction);
+
+    QTime getIdlenessBatteryTime();
+    void setIdlenessBatteryTime(QTime idlenessTime);
 
     bool isIdlenessBacklightWatcherEnabled();
     void setIdlenessBacklightWatcherEnabled(bool idlenessBacklightWatcherEnabled);
@@ -103,15 +120,26 @@ public:
     bool isIdlenessBacklightOnBatteryDischargingEnabled();
     void setIdlenessBacklightOnBatteryDischargingEnabled(bool enabled);
 
+    bool isDisableIdlenessWhenFullscreenEnabled();
+    void setDisableIdlenessWhenFullscreen(bool enabled);
+
     int getPowerKeyAction();
     void setPowerKeyAction(int action);
-    
+
     int getSuspendKeyAction();
     void setSuspendKeyAction(int action);
-    
+
     int getHibernateKeyAction();
     void setHibernateKeyAction(int action);
+
+    bool isIdlenessWatcherPaused() const;
+    void setIdlenessWatcherPaused(bool idlenessWatcherPaused);
+
+private:
+    static bool mIdlenessWatcherPaused;
 };
+
+Q_DECLARE_METATYPE(PowerManagementSettings::IconType);
 
 
 #endif // COMMON_H

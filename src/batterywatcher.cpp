@@ -64,11 +64,16 @@ BatteryWatcher::BatteryWatcher(QObject *parent) : Watcher(parent)
 
     mBatteryInfoDialog = new BatteryInfoDialog(mBatteries);
 
-    connect(&mSettings, SIGNAL(settingsChanged()), this, SLOT(settingsChanged()));
-    connect(LXQt::Settings::globalSettings(), SIGNAL(iconThemeChanged()), this, SLOT(settingsChanged()));
+    connect(&mSettings, &PowerManagementSettings::settingsChanged, this, &BatteryWatcher::settingsChanged);
+    connect(LXQt::Settings::globalSettings(), &LXQt::GlobalSettings::iconThemeChanged, this, &BatteryWatcher::settingsChanged);
 
     settingsChanged();
     batteryChanged();
+
+    // pause timer
+    mPauseTimer.setSingleShot(true);
+    mPauseTimer.setTimerType(Qt::VeryCoarseTimer);
+    connect(&mPauseTimer, &QTimer::timeout, this, &BatteryWatcher::onPauseTimeout);
 }
 
 BatteryWatcher::~BatteryWatcher()
@@ -85,7 +90,7 @@ void BatteryWatcher::batteryChanged()
     bool discharging = true;
     double chargeLevel;
 
-    for (const Solid::Battery *battery : qAsConst(mBatteries))
+    for (const Solid::Battery *battery : std::as_const(mBatteries))
     {
         totalEnergyFull += battery->energyFull();
         totalEnergyNow += battery->energy();
@@ -123,19 +128,19 @@ void BatteryWatcher::batteryChanged()
             switch (mSettings.getPowerLowAction())
             {
             case LXQt::Power::PowerSuspend:
-                notification->setBody(tr("Suspending in %n second(s)", nullptr, secondsToAction).arg(secondsToAction));
+                notification->setBody(tr("Suspending in %Ln second(s)", nullptr, secondsToAction));
                 break;
             case LXQt::Power::PowerHibernate:
-                notification->setBody(tr("Hibernating in %n second(s)", nullptr, secondsToAction).arg(secondsToAction));
+                notification->setBody(tr("Hibernating in %Ln second(s)", nullptr, secondsToAction));
                 break;
             case LXQt::Power::PowerShutdown:
-                notification->setBody(tr("Shutting down in %n second(s)", nullptr, secondsToAction).arg(secondsToAction));
+                notification->setBody(tr("Shutting down in %Ln second(s)", nullptr, secondsToAction));
                 break;
             }
 
             notification->update();
 
-            QTimer::singleShot(200, this, SLOT(batteryChanged()));
+            QTimer::singleShot(200, this, &BatteryWatcher::batteryChanged);
         }
         else
         {
@@ -159,6 +164,9 @@ void BatteryWatcher::settingsChanged()
 {
     if (!mSettings.isShowIcon())
     {
+        // first remove the pause state because it is only for the tray
+        mSettings.setIdlenessWatcherPaused(false);
+
         while (!mTrayIcons.isEmpty())
         {
             mTrayIcons.first()->hide();
@@ -167,12 +175,33 @@ void BatteryWatcher::settingsChanged()
     }
     else if (mTrayIcons.isEmpty())
     {
-        for (Solid::Battery *battery : qAsConst(mBatteries))
+        for (Solid::Battery *battery : std::as_const(mBatteries))
         {
             mTrayIcons.append(new TrayIcon(battery, this));
-            connect(mTrayIcons.last(), SIGNAL(toggleShowInfo()), mBatteryInfoDialog, SLOT(toggleShow()));
+            connect(mTrayIcons.last(), &TrayIcon::toggleShowInfo, mBatteryInfoDialog, &BatteryInfoDialog::toggleShow);
+            connect(mTrayIcons.last(), &TrayIcon::pauseChanged, this, &BatteryWatcher::setPause);
             mTrayIcons.last()->show();
         }
     }
 }
 
+void BatteryWatcher::onPauseTimeout()
+{
+    for (const auto &trayIcon : std::as_const(mTrayIcons))
+        trayIcon->setPause(TrayIcon::PAUSE::None);
+}
+
+void BatteryWatcher::setPause(TrayIcon::PAUSE duration)
+{
+    if (duration == TrayIcon::PAUSE::None)
+    {
+        onPauseTimeout();
+        mPauseTimer.stop();
+    }
+    else
+    {
+        for (const auto &trayIcon : std::as_const(mTrayIcons))
+            trayIcon->setPause(duration);
+        mPauseTimer.start(TrayIcon::getPauseInterval(duration));
+    }
+}

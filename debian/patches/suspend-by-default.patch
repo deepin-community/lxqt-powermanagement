@@ -1,0 +1,28 @@
+Description: Suspend by default on closing lid
+Origin: https://github.com/lxqt/lxqt-powermanagement/commit/5b370a870cd2234c1ca25c6dde24ba51396817fd
+Bug: https://github.com/lxqt/lxqt-powermanagement/commit/5b370a870cd2234c1ca25c6dde24ba51396817fd
+Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1091746
+Applied-Upstream: https://github.com/lxqt/lxqt-powermanagement/commit/5b370a870cd2234c1ca25c6dde24ba51396817fd
+Reviewed-By: Andrew Lee (李健秋) <ajqlee@debian.org>
+Last-Update: 2025-03-30
+
+--- lxqt-powermanagement-2.1.0.orig/config/powermanagementsettings.cpp
++++ lxqt-powermanagement-2.1.0/config/powermanagementsettings.cpp
+@@ -161,7 +161,7 @@ void PowerManagementSettings::setLidWatc
+ 
+ int PowerManagementSettings::getLidClosedAcAction()
+ {
+-    return value(LID_CLOSED_AC_ACTION_KEY, -1).toInt();
++    return value(LID_CLOSED_AC_ACTION_KEY, LXQt::Power::Action::PowerSuspend).toInt();
+ }
+ 
+ void PowerManagementSettings::setLidClosedAcAction(int lidClosedAcAction)
+@@ -171,7 +171,7 @@ void PowerManagementSettings::setLidClos
+ 
+ int PowerManagementSettings::getLidClosedAction()
+ {
+-    return value(LID_CLOSED_ACTION_KEY, -1).toInt();
++    return value(LID_CLOSED_ACTION_KEY, LXQt::Power::Action::PowerSuspend).toInt();
+ }
+ 
+ void PowerManagementSettings::setLidClosedAction(int lidClosedAction)

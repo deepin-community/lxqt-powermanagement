@@ -24,94 +24,179 @@
 
 #include "idlenesswatcher.h"
 
-#include <QCoreApplication>
+#include <QGuiApplication>
+#include <QTimer>
 #include <KIdleTime>
 #include <Solid/Device>
 #include <Solid/Battery>
+#include <KWindowSystem>
+#include <KX11Extras>
+#include <KWindowInfo>
 #include <QDebug>
 #include <LXQt/lxqtnotification.h>
 #include <QObject>
+#include <xcb/dpms.h>
+#include <xcb/screensaver.h>
 
 IdlenessWatcher::IdlenessWatcher(QObject* parent):
     Watcher(parent)
 {
     qDebug() << "Starting idlenesswatcher";
-    
-    mIdleWatcher = mIdleBacklightWatcher = mBacklightActualValue = -1;
+
+    mIdleACWatcher = mIdleBatteryWatcher = mIdleBacklightWatcher = mBacklightActualValue = -1;
     mBacklight = nullptr;
     mDischarging = false;
 
     connect(KIdleTime::instance(),
-            static_cast<void (KIdleTime::*)(int)>(&KIdleTime::timeoutReached),
+            static_cast<void (KIdleTime::*)(int,int)>(&KIdleTime::timeoutReached),
             this,
             &IdlenessWatcher::timeoutReached);
 
+    // Init backlight control
+    connect(KIdleTime::instance(),
+            &KIdleTime::resumingFromIdle,
+            this,
+            &IdlenessWatcher::resumingFromIdle);
+    const QList<Solid::Device> devices = Solid::Device::listFromType(Solid::DeviceInterface::Battery, QString());
+
+    for (Solid::Device device : devices)
     {
-        // Init backlight control
-        connect(KIdleTime::instance(),
-                &KIdleTime::resumingFromIdle,
-                this,
-                &IdlenessWatcher::resumingFromIdle);
-        const QList<Solid::Device> devices = Solid::Device::listFromType(Solid::DeviceInterface::Battery, QString());
-    
-        for (Solid::Device device : devices)
-        {
-            Solid::Battery *battery = device.as<Solid::Battery>();
-            if (battery->type() == Solid::Battery::PrimaryBattery) {
-                connect(battery, &Solid::Battery::chargeStateChanged, this, &IdlenessWatcher::onBatteryChanged);
-                mDischarging |= battery->chargeState() == Solid::Battery::ChargeState::Discharging;
+        Solid::Battery *battery = device.as<Solid::Battery>();
+        if (battery->type() == Solid::Battery::PrimaryBattery) {
+            connect(battery, &Solid::Battery::chargeStateChanged, this, &IdlenessWatcher::onBatteryChanged);
+            mDischarging |= battery->chargeState() == Solid::Battery::ChargeState::Discharging;
+        }
+    }
+
+    connect(&mPSettings, &LXQt::Settings::settingsChanged, this, &IdlenessWatcher::onSettingsChanged);
+
+    // retrieve DPMS timeouts
+    mDpmsStandby = mDpmsSuspend = mDpmsOff = 0;
+    if (QGuiApplication::platformName() == QStringLiteral("xcb")) {
+        if (auto x11NativeInterface = qGuiApp->nativeInterface<QNativeInterface::QX11Application>()) {
+            xcb_connection_t* c = x11NativeInterface->connection();
+            xcb_dpms_get_timeouts_cookie_t cookie = xcb_dpms_get_timeouts(c);
+            xcb_dpms_get_timeouts_reply_t* reply = xcb_dpms_get_timeouts_reply(c, cookie, nullptr);
+            if (reply) {
+                mDpmsStandby = reply->standby_timeout;
+                mDpmsSuspend = reply->suspend_timeout;
+                mDpmsOff = reply->off_timeout;
+                free(reply);
             }
         }
     }
-    connect(&mPSettings, &LXQt::Settings::settingsChanged,
-            this, &IdlenessWatcher::onSettingsChanged);
-    
+
     setup();
 }
 
 IdlenessWatcher::~IdlenessWatcher()
 {
+    setDpmsTimeouts(true);
     KIdleTime::instance()->removeAllIdleTimeouts();
 }
 
-void IdlenessWatcher::setup()
-{
-    if(mPSettings.isIdlenessWatcherEnabled()) {
-        int timeout = 1000 * mPSettings.getIdlenessTimeSecs();
-        mIdleWatcher = KIdleTime::instance()->addIdleTimeout(timeout);
-        {
-            // Enable backlight control:
-            if(mPSettings.isIdlenessBacklightWatcherEnabled() &&
-                (
-                    !mPSettings.isIdlenessBacklightOnBatteryDischargingEnabled()
-                      ||
-                    (
-                        mPSettings.isIdlenessBacklightOnBatteryDischargingEnabled()
-                          &&
-                        mDischarging
-                    )
-                )
-              ) {
-                QTime time = mPSettings.getIdlenessBacklightTime();
-                int milliseconds = (time.second() + time.minute() * 60) * 1000;
-                if(milliseconds < 1000)
-                    milliseconds = 1000;
-                mIdleBacklightWatcher = KIdleTime::instance()->addIdleTimeout(milliseconds);
+void IdlenessWatcher::setDpmsTimeouts(bool restore) {
+    if (QGuiApplication::platformName() == QStringLiteral("xcb")) {
+        if (auto x11NativeInterface = qGuiApp->nativeInterface<QNativeInterface::QX11Application>()) {
+            xcb_connection_t* c = x11NativeInterface->connection();
+            if (restore) {
+                xcb_dpms_set_timeouts(c, mDpmsStandby, mDpmsSuspend, mDpmsOff);
+                xcb_screensaver_suspend(c, 0); // WARNING: This is not documented but works.
+            }
+            else {
+                xcb_dpms_set_timeouts(c, 0, 0, 0);
+                xcb_screensaver_suspend(c, XCB_SCREENSAVER_SUSPEND);
             }
         }
     }
 }
 
-void IdlenessWatcher::timeoutReached(int identifier)
+void IdlenessWatcher::setup()
 {
-    if(identifier == mIdleWatcher) {
-        doAction(mPSettings.getIdlenessAction());
-    } else if(identifier == mIdleBacklightWatcher && mBacklightActualValue < 0) {
+    if(mPSettings.isIdlenessWatcherEnabled()) {
+        QTime ACtime = mPSettings.getIdlenessACTime();
+        int ACmsecs = (ACtime.second() + ACtime.minute() * 60) * 1000;
+        mIdleACWatcher = KIdleTime::instance()->addIdleTimeout(ACmsecs);
+
+        QTime BATtime = mPSettings.getIdlenessBatteryTime();
+        int BATmsecs = (BATtime.second() + BATtime.minute() * 60) * 1000;
+        // to get sure times are NOT the same ones...
+        if (BATmsecs == ACmsecs) {
+            BATmsecs -= 10; // just 10 msecs less... ;)
+        }
+        mIdleBatteryWatcher = KIdleTime::instance()->addIdleTimeout(BATmsecs);
+
+        // Enable backlight control:
+        if(mPSettings.isIdlenessBacklightWatcherEnabled() &&
+            (
+                !mPSettings.isIdlenessBacklightOnBatteryDischargingEnabled()
+                  ||
+                (
+                    mPSettings.isIdlenessBacklightOnBatteryDischargingEnabled()
+                      &&
+                    mDischarging
+                )
+            )
+          ) {
+            QTime time = mPSettings.getIdlenessBacklightTime();
+            int milliseconds = (time.second() + time.minute() * 60) * 1000;
+            if(milliseconds < 1000)
+                milliseconds = 1000;
+            mIdleBacklightWatcher = KIdleTime::instance()->addIdleTimeout(milliseconds);
+        }
+
+        // override DPMS settings
+        setDpmsTimeouts(false);
+    }
+    else {
+        // restore DPMS settings
+        setDpmsTimeouts(true);
+    }
+}
+
+void IdlenessWatcher::timeoutReached(int identifier,int /*msec*/)
+{
+    if (mPSettings.isIdlenessWatcherPaused()) {
+        QTimer::singleShot(0, this, [] {
+            KIdleTime::instance()->simulateUserActivity();
+        });
+        return;
+    }
+
+    // check if disable Idleness when fullscreen is enabled
+    if (mPSettings.isDisableIdlenessWhenFullscreenEnabled()) {
+        WId w = KX11Extras::activeWindow();
+        KWindowInfo info(w, NET::WMState);
+        if (info.hasState(NET::FullScreen)) {
+            QTimer::singleShot(0, this, [] {
+                KIdleTime::instance()->simulateUserActivity();
+            });
+            return;
+        }
+    }
+
+    if(identifier == mIdleACWatcher) {
+        if (mDischarging) {
+            return;
+        }
+        doAction(mPSettings.getIdlenessACAction());
+        return;
+    }
+
+    if(identifier == mIdleBatteryWatcher) {
+        if (!mDischarging) {
+            return;
+        }
+        doAction(mPSettings.getIdlenessBatteryAction());
+        return;
+    }
+
+    if(identifier == mIdleBacklightWatcher && mBacklightActualValue < 0) {
         if(mBacklight == nullptr) {
             mBacklight = new LXQt::Backlight();
-            connect(mBacklight, &QObject::destroyed, [this](QObject *) {mBacklight = nullptr;} );
+            connect(mBacklight, &QObject::destroyed, this, [this](QObject *) {mBacklight = nullptr;} );
         }
-            
+
         //LXQt::Notification::notify(QStringLiteral("IdlenessWatcher::timeoutReached"),
         //    mBacklight->isBacklightAvailable() ?
         //     QStringLiteral("").setNum(mBacklightActualValue):QStringLiteral("Error!!"));
@@ -119,7 +204,7 @@ void IdlenessWatcher::timeoutReached(int identifier)
         mBacklightActualValue = mBacklight->getBacklight();
         if(mBacklight->isBacklightAvailable() && !mBacklight->isBacklightOff())
             mBacklight->setBacklight((float)mBacklightActualValue * (float)(mPSettings.getBacklight())/100.0f);
-        
+
         KIdleTime::instance()->removeIdleTimeout(mIdleBacklightWatcher);
         KIdleTime::instance()->catchNextResumeEvent();
 
@@ -133,7 +218,7 @@ void IdlenessWatcher::resumingFromIdle()
         if(mPSettings.isIdlenessBacklightWatcherEnabled()) {
             if(mBacklight == nullptr) {
                 mBacklight = new LXQt::Backlight();
-                connect(mBacklight, &QObject::destroyed, [this](QObject *) {mBacklight = nullptr;} );
+                connect(mBacklight, &QObject::destroyed, this, [this](QObject *) {mBacklight = nullptr;} );
             }
 
             if(mBacklight->isBacklightAvailable() && !mBacklight->isBacklightOff())
@@ -148,25 +233,23 @@ void IdlenessWatcher::resumingFromIdle()
 
 void IdlenessWatcher::onBatteryChanged(int, const QString &)
 {
-    if( mPSettings.isIdlenessBacklightOnBatteryDischargingEnabled() ) {
-        const QList<Solid::Device> devices = Solid::Device::listFromType(Solid::DeviceInterface::Battery, QString());
-        
-        mDischarging = false;
-    
-        for (Solid::Device device : devices) {
-            Solid::Battery *battery = device.as<Solid::Battery>();
-            if (battery->type() == Solid::Battery::PrimaryBattery) {
-                mDischarging |= battery->chargeState() == Solid::Battery::ChargeState::Discharging;
-            }
+    const QList<Solid::Device> devices = Solid::Device::listFromType(Solid::DeviceInterface::Battery, QString());
+
+    mDischarging = false;
+
+    for (Solid::Device device : devices) {
+        Solid::Battery *battery = device.as<Solid::Battery>();
+        if (battery->type() == Solid::Battery::PrimaryBattery) {
+            mDischarging |= battery->chargeState() == Solid::Battery::ChargeState::Discharging;
         }
     }
+
     onSettingsChanged();
 }
-
 
 void IdlenessWatcher::onSettingsChanged()
 {
     KIdleTime::instance()->removeAllIdleTimeouts();
-    mIdleWatcher = mIdleBacklightWatcher = -1;
+    mIdleACWatcher = mIdleBatteryWatcher = mIdleBacklightWatcher = -1;
     setup();
 }

@@ -4,109 +4,133 @@
 <context>
     <name>BatteryHelper</name>
     <message>
-        <location filename="../batteryhelper.cpp" line="42"/>
-        <source>Empty</source>
-        <translation>Üres</translation>
+        <location filename="../batteryhelper.cpp" line="44"/>
+        <source>Stable</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="44"/>
+        <location filename="../batteryhelper.cpp" line="46"/>
         <source>Discharging</source>
         <translation>Kisütés</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="46"/>
+        <location filename="../batteryhelper.cpp" line="48"/>
         <source>Fully charged</source>
-        <translation>Teletöltve</translation>
+        <translation>Teljesen feltöltve</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="49"/>
+        <location filename="../batteryhelper.cpp" line="51"/>
         <source>Charging</source>
         <translation>Töltés</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="58"/>
+        <location filename="../batteryhelper.cpp" line="60"/>
         <source>Lithium ion</source>
         <translation>Lítiumion</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="60"/>
+        <location filename="../batteryhelper.cpp" line="62"/>
         <source>Lithium polymer</source>
         <translation>Lítium polimer</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="62"/>
+        <location filename="../batteryhelper.cpp" line="64"/>
         <source>Lithium iron phosphate</source>
-        <translation>Lítium vasfoszfát</translation>
+        <translation>Lítium vas-foszfát</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="64"/>
+        <location filename="../batteryhelper.cpp" line="66"/>
         <source>Lead acid</source>
         <translation>Savas ólom</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="66"/>
+        <location filename="../batteryhelper.cpp" line="68"/>
         <source>Nickel cadmium</source>
         <translation>Nikkel kadmium</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="68"/>
+        <location filename="../batteryhelper.cpp" line="70"/>
         <source>Nickel metal hydride</source>
         <translation>Nikkel fémhibrid</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="71"/>
+        <location filename="../batteryhelper.cpp" line="73"/>
         <source>Unknown</source>
         <translation>Ismeretlen</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="80"/>
-        <source>Personal Digital Assistant&apos;s battery</source>
-        <translation>PDA táp</translation>
-    </message>
-    <message>
         <location filename="../batteryhelper.cpp" line="82"/>
-        <source>Uninterruptible Power Supply&apos;s battery</source>
-        <translation>Folytonos táp</translation>
+        <source>Personal Digital Assistant&apos;s battery</source>
+        <translation>PDA akkumulátor</translation>
     </message>
     <message>
         <location filename="../batteryhelper.cpp" line="84"/>
-        <source>Primary battery</source>
-        <translation>Elsődleges táp</translation>
+        <source>Uninterruptible Power Supply&apos;s battery</source>
+        <translation>Szünetmentes tápegység akkumulátora</translation>
     </message>
     <message>
         <location filename="../batteryhelper.cpp" line="86"/>
-        <source>Mouse battery</source>
-        <translation>Egér táp</translation>
+        <source>Primary battery</source>
+        <translation>Elsődleges akkumulátor</translation>
     </message>
     <message>
         <location filename="../batteryhelper.cpp" line="88"/>
-        <source>Keyboard battery</source>
-        <translation>Bellentyűzet táp</translation>
+        <source>Mouse battery</source>
+        <translation>Egér akkumulátor</translation>
     </message>
     <message>
         <location filename="../batteryhelper.cpp" line="90"/>
-        <source>Keyboard and mouse&apos;s battery</source>
-        <translation>Billentyű és egértáp</translation>
+        <source>Keyboard battery</source>
+        <translation>Billentyűzet akkumulátor</translation>
     </message>
     <message>
         <location filename="../batteryhelper.cpp" line="92"/>
-        <source>Camera battery</source>
-        <translation>Kamera táp</translation>
+        <source>Keyboard and mouse&apos;s battery</source>
+        <translation>Billentyűzet és egérakkumulátor</translation>
     </message>
     <message>
         <location filename="../batteryhelper.cpp" line="94"/>
-        <source>Phone battery</source>
-        <translation>Telefon táp</translation>
+        <source>Camera battery</source>
+        <translation>Kamera akkumulátor</translation>
     </message>
     <message>
         <location filename="../batteryhelper.cpp" line="96"/>
-        <source>Monitor battery</source>
-        <translation>Monitor táp</translation>
+        <source>Phone battery</source>
+        <translation>Telefon akkumulátor</translation>
     </message>
     <message>
-        <location filename="../batteryhelper.cpp" line="99"/>
+        <location filename="../batteryhelper.cpp" line="98"/>
+        <source>Monitor battery</source>
+        <translation>Monitor akkumulátor</translation>
+    </message>
+    <message>
+        <location filename="../batteryhelper.cpp" line="101"/>
         <source>Unknown battery</source>
-        <translation>Ismeretlen táp</translation>
+        <translation>Ismeretlen akkumulátor</translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../batteryhelper.cpp" line="111"/>
+        <source>%Ln hour(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../batteryhelper.cpp" line="112"/>
+        <source>%Ln minute(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../batteryhelper.cpp" line="117"/>
+        <source>remaining %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../batteryhelper.cpp" line="122"/>
+        <source>to full %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -114,7 +138,7 @@
     <message>
         <location filename="../batteryinfodialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation>Párbeszéd</translation>
+        <translation>Párbeszédablak</translation>
     </message>
     <message>
         <location filename="../batteryinfodialog.cpp" line="24"/>
@@ -132,7 +156,7 @@
     <message>
         <location filename="../batteryinfoframe.ui" line="53"/>
         <source>Temperature:</source>
-        <translation>Hőfok:</translation>
+        <translation>Hőmérséklet:</translation>
     </message>
     <message>
         <location filename="../batteryinfoframe.ui" line="63"/>
@@ -157,7 +181,7 @@
     <message>
         <location filename="../batteryinfoframe.ui" line="124"/>
         <source>Energy Now:</source>
-        <translation type="unfinished">Mostani kapacitás:</translation>
+        <translation>Jelenlegi kapacitás:</translation>
     </message>
     <message>
         <location filename="../batteryinfoframe.ui" line="141"/>
@@ -179,6 +203,11 @@
         <source>Vendor:</source>
         <translation>Gyártó:</translation>
     </message>
+    <message>
+        <location filename="../batteryinfoframe.cpp" line="65"/>
+        <source>Empty</source>
+        <translation type="unfinished">Üres</translation>
+    </message>
 </context>
 <context>
     <name>BatteryWatcher</name>
@@ -190,32 +219,32 @@
     <message>
         <location filename="../batterywatcher.cpp" line="49"/>
         <source>LXQt could not find data about any battery - monitoring disabled</source>
-        <translation>Az LXQt nem ismert fel akkut - figyelés kikapcsolva</translation>
+        <translation>Az LXQt nem talált adatokat egyetlen akkumulátorról sem - figyelés letiltva</translation>
     </message>
     <message>
-        <location filename="../batterywatcher.cpp" line="114"/>
+        <location filename="../batterywatcher.cpp" line="119"/>
         <source>Power low!</source>
         <translation>Alacsony feszültség!</translation>
     </message>
     <message numerus="yes">
-        <location filename="../batterywatcher.cpp" line="126"/>
-        <source>Suspending in %n second(s)</source>
-        <translation>
-            <numerusform>Készenlét %n másodperc múlva</numerusform>
+        <location filename="../batterywatcher.cpp" line="131"/>
+        <source>Suspending in %Ln second(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../batterywatcher.cpp" line="129"/>
-        <source>Hibernating in %n second(s)</source>
-        <translation>
-            <numerusform>Mélykészenlét %n másodperc múlva</numerusform>
+        <location filename="../batterywatcher.cpp" line="134"/>
+        <source>Hibernating in %Ln second(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../batterywatcher.cpp" line="132"/>
-        <source>Shutting down in %n second(s)</source>
-        <translation>
-            <numerusform>Kikapcsolás %n másodperc múlva</numerusform>
+        <location filename="../batterywatcher.cpp" line="137"/>
+        <source>Shutting down in %Ln second(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -248,7 +277,7 @@
         <location filename="../powermanagementd.cpp" line="116"/>
         <source>You are running LXQt Power Management for the first time.
 You can configure it from settings... </source>
-        <translation>Az LXQt energiakezelő első alkalommal fut.
+        <translation>Az LXQt energiakezelő az első alkalommal fut.
 A beállításokban konfigurálható... </translation>
     </message>
     <message>
@@ -260,40 +289,75 @@ A beállításokban konfigurálható... </translation>
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../trayicon.cpp" line="61"/>
+        <location filename="../trayicon.cpp" line="68"/>
         <source>Configure</source>
         <translation>Beállítás</translation>
     </message>
     <message>
-        <location filename="../trayicon.cpp" line="63"/>
-        <location filename="../trayicon.cpp" line="94"/>
+        <location filename="../trayicon.cpp" line="76"/>
+        <source>30 minutes</source>
+        <translation>30 perc</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="80"/>
+        <source>1 hour</source>
+        <translation>1 óra</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="84"/>
+        <source>2 hours</source>
+        <translation>2 óra</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="88"/>
+        <source>3 hours</source>
+        <translation>3 óra</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="92"/>
+        <source>4 hours</source>
+        <translation>4 óra</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="97"/>
+        <source>Pause idleness checks</source>
+        <translation type="unfinished">Tétlenségi figyelés szüneteltetése</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="102"/>
+        <location filename="../trayicon.cpp" line="194"/>
         <source>About</source>
         <translation>Névjegy</translation>
     </message>
     <message>
-        <location filename="../trayicon.cpp" line="65"/>
+        <location filename="../trayicon.cpp" line="104"/>
         <source>Disable icon</source>
-        <translation>Ikon kikapcsolása</translation>
+        <translation>Ikon letiltása</translation>
     </message>
     <message>
-        <location filename="../trayicon.cpp" line="95"/>
+        <location filename="../trayicon.cpp" line="163"/>
+        <source>Empty</source>
+        <translation type="unfinished">Üres</translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="195"/>
         <source>&lt;p&gt;  &lt;b&gt;LXQt Power Management&lt;/b&gt;&lt;br/&gt;  - Power Management for the LXQt Desktop Environment&lt;/p&gt;&lt;p&gt;  Authors:&lt;br/&gt;  &amp;nbsp; Christian Surlykke, Alec Moskvin&lt;br/&gt;  &amp;nbsp; - and others from the Razor and LXQt projects&lt;/p&gt;&lt;p&gt;  Copyright &amp;copy; 2012-2014&lt;/p&gt;</source>
-        <translation>&lt;p&gt;  &lt;b&gt;LXQt Power Management&lt;/b&gt;&lt;br/&gt;  - Energiakezelő az LXQt asztali környezethez&lt;/p&gt;&lt;p&gt;  Szerzők:&lt;br/&gt;  &amp;nbsp; Christian Surlykke, Alec Moskvin&lt;br/&gt;  &amp;nbsp; - és mások a Razor és LXQt csapatból&lt;/p&gt;&lt;p&gt;  Copyright &amp;copy; 2012-2014&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;  &lt;b&gt;LXQt energiakezelés&lt;/b&gt;&lt;br/&gt;  - Energiakezelő az LXQt asztali környezethez&lt;/p&gt;&lt;p&gt;  Szerzők:&lt;br/&gt;  &amp;nbsp; Christian Surlykke, Alec Moskvin&lt;br/&gt;  &amp;nbsp; - és mások a Razor és LXQt csapatból&lt;/p&gt;&lt;p&gt;  Copyright &amp;copy; 2012-2014&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../trayicon.cpp" line="113"/>
+        <location filename="../trayicon.cpp" line="213"/>
         <source>LXQt Power Management info</source>
-        <translation>LXQt Energiakezelő információ</translation>
+        <translation>LXQt energiakezelő információ</translation>
     </message>
     <message>
-        <location filename="../trayicon.cpp" line="114"/>
+        <location filename="../trayicon.cpp" line="214"/>
         <source>The LXQt Power Management tray icon can be (re)enabled in &lt;i&gt;lxqt-config-powermanagement&lt;/i&gt;</source>
-        <translation>Az LXQt energiakezelő tálcaikon (újra)engedélyezhető az &lt;i&gt;lxqt-config-powermanagement&lt;/i&gt; segítségével</translation>
+        <translation>Az LXQt energiakezelő tálcaikon (újra)engedélyezhető az &lt;i&gt;lxqt-config-powermanagement&lt;/i&gt;ben</translation>
     </message>
     <message>
-        <location filename="../trayicon.cpp" line="116"/>
+        <location filename="../trayicon.cpp" line="216"/>
         <source>Configure now</source>
-        <translation>Beállítás</translation>
+        <translation>Beállítás most</translation>
     </message>
 </context>
 </TS>
